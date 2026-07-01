@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+/* Biophilic, warm palette echoing the reference photo: wood, moss, clay,
+   concrete, daylight. Tokens defined here become Tailwind utilities, e.g.
+   `bg-canvas`, `text-moss`, `border-line`. */
+@theme {
+  --color-canvas: #faf6ef; /* warm paper */
+  --color-surface: #f2ebdd; /* sand */
+  --color-surface-2: #eadfcc; /* deeper sand */
+  --color-ink: #241c15; /* espresso */
+  --color-muted: #6d6252; /* stone / concrete text */
+  --color-moss: #4a5d3a; /* forest / moss green */
+  --color-moss-deep: #2f3d26;
+  --color-clay: #b26548; /* terracotta accent */
+  --color-sky: #6f8898; /* muted daylight blue */
+  --color-line: #ddd0bd; /* hairline */
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-display: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino,
+    Georgia, 'Times New Roman', serif;
+
+  --radius-panel: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-moss);
+    color: var(--color-canvas);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-moss);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Long-form prose used on the MDX design/about pages. */
+  .prose-dome {
+    max-width: 44rem;
+    line-height: 1.7;
+  }
+  .prose-dome > * + * {
+    margin-top: 1.15em;
+  }
+  .prose-dome h2 {
+    font-size: 1.6rem;
+    margin-top: 2.2em;
+    line-height: 1.2;
+  }
+  .prose-dome h3 {
+    font-size: 1.2rem;
+    margin-top: 1.6em;
+  }
+  .prose-dome a {
+    color: var(--color-moss);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-dome strong {
+    color: var(--color-moss-deep);
+  }
+  .prose-dome ul {
+    list-style: disc;
+    padding-left: 1.3em;
+  }
+  .prose-dome ul > li + li {
+    margin-top: 0.4em;
+  }
+  .prose-dome blockquote {
+    border-left: 3px solid var(--color-clay);
+    padding-left: 1em;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+}

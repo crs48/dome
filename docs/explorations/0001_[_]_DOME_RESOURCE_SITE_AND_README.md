@@ -619,9 +619,9 @@ stateDiagram-v2
 
 - [x] `git mv` assets: `2d/*.mp4 → public/videos/`, `3d/*.png → src/assets/renders/`, `3d/*.blend* → design/`; move `2d/imagine-cbd1317c.jpg → src/assets/photos/` **only after licensing is cleared**.
 - [x] Add `.gitignore` (`node_modules/`, `dist/`, `.astro/`, `.DS_Store`).
-- [ ] `npm create astro@latest`; `npx astro add mdx sitemap tailwind`.
-- [ ] Write `astro.config.mjs` with `site`, `base: '/dome'`, and the `image` block.
-- [ ] Add `public/.nojekyll`.
+- [x] `npm create astro@latest`; `npx astro add mdx sitemap tailwind`.
+- [x] Write `astro.config.mjs` with `site`, `base: '/dome'`, and the `image` block.
+- [x] Add `public/.nojekyll`.
 - [ ] Create `src/content.config.ts` with the `methods` + `projects` collections.
 - [ ] Populate `src/content/methods.yaml` from the comparison in this doc (8 rows, with pros/cons, caveats, sources).
 - [ ] Populate `src/content/projects.yaml` from the verified resource directory.
