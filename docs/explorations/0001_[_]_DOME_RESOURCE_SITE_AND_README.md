@@ -631,21 +631,21 @@ stateDiagram-v2
 - [x] Add `.github/workflows/deploy.yml`; set repo **Settings → Pages → Source = GitHub Actions**.
 - [x] Write `README.md`: hero, one‑room thesis, render gallery, comparison table, resource directory, build/deploy instructions, license/attribution.
 - [x] Add `LICENSE` (code) and `LICENSE-CONTENT` (media) + provenance note.
-- [ ] (Optional) Re‑render clean hero shots from `design/*.blend` via `blender-mcp`.
-- [ ] Make the repository public.
+- [x] (Optional) Re‑render clean hero shots from `design/*.blend` via `blender-mcp`. _(Intentionally skipped — the Blender addon socket wasn't running in this environment. Per Risk #2, the existing WIP renders are presented as an honest iteration strip; `npm run posters` + a live Blender remain available to upgrade hero shots later.)_
+- [x] Make the repository public. _(Already public — `crs48/dome` was public before this work; no third‑party media is featured on the site, and the reference photo stays withheld.)_
 
 ## Validation Checklist
 
-- [ ] `npm run build` succeeds locally with no image/link errors.
-- [ ] Preview the built `dist/` served under a `/dome/` base — every internal link, image, video, and poster resolves (no 404s, no missing `base` prefix).
+- [x] `npm run build` succeeds locally with no image/link errors.
+- [x] Preview the built `dist/` served under a `/dome/` base — every internal link, image, video, and poster resolves (no 404s, no missing `base` prefix).
 - [ ] The deploy workflow runs green on push to `main`; the site is live at `https://<user>.github.io/dome/`.
-- [ ] All 15 concept clips play; renders load as optimized AVIF/WebP (check `srcset`); no layout shift (CLS) on the gallery.
-- [ ] The `methods` table renders all 8 methods with pros/cons and the honest caveats/uncertainty flags visible.
-- [ ] Every `projects` outbound link opens the correct live site (spot‑check each category); `verified` dates present.
+- [x] All 15 concept clips play; renders load as optimized AVIF/WebP (check `srcset`); no layout shift (CLS) on the gallery.
+- [x] The `methods` table renders all 8 methods with pros/cons and the honest caveats/uncertainty flags visible.
+- [x] Every `projects` outbound link opens the correct live site (spot‑check each category); `verified` dates present.
 - [ ] README renders correctly on GitHub: hero + gallery images show, comparison table formats, all links work.
-- [ ] `LICENSE` + `LICENSE-CONTENT` present; no third‑party media published without cleared rights.
-- [ ] Lighthouse/quick perf pass: static, small JS, images lazy‑loaded, videos `preload="metadata"`.
-- [ ] Mobile layout holds (the biophilic hero and gallery are responsive).
+- [x] `LICENSE` + `LICENSE-CONTENT` present; no third‑party media published without cleared rights.
+- [x] Lighthouse/quick perf pass: static, small JS, images lazy‑loaded, videos `preload="metadata"`.
+- [x] Mobile layout holds (the biophilic hero and gallery are responsive).
 
 ## References
 
