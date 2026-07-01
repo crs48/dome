@@ -1,0 +1,226 @@
+# Curated outbound resource directory. Live-verified July 2026.
+# `id` keys the file() loader entry; the rest is schema-validated.
+
+# ── Bioceramic / next-gen ────────────────────────────────────────────────
+- id: geoship
+  title: Geoship
+  url: "https://geoship.is/"
+  category: bioceramic
+  blurb: "Startup building luminous, non-combustible bioceramic dome kits. Bold vision; pre-mainstream, so treat performance and pricing as vendor claims."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [bioceramic, prefab, fireproof]
+
+# ── Aircrete ─────────────────────────────────────────────────────────────
+- id: domegaia
+  title: Domegaia
+  url: "https://domegaia.com/"
+  category: aircrete
+  blurb: "Hajjar Gibran's aircrete company and its 'Little Dragon' foam generator — the reference for cheap, DIY foamed-cement dome shells. Workshops and plans."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [aircrete, diy, workshops]
+
+- id: aircrete-harry
+  title: Aircrete Harry
+  url: "https://aircreteharry.com/"
+  category: aircrete
+  blurb: "Prolific aircrete builder and educator with equipment, tutorials, and build videos for owner-builders."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [aircrete, diy, tutorials]
+
+- id: steve-areen-dome-home
+  title: Steve Areen's Thailand Dome Home
+  url: "https://steveareen.com/domehome/"
+  category: aircrete
+  blurb: "The famous ~$9k owner-built dome home in Thailand — the story that launched a thousand aircrete dreams."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [inspiration, low-cost, story]
+
+# ── Geodesic kits ────────────────────────────────────────────────────────
+- id: pacific-domes
+  title: Pacific Domes
+  url: "https://pacificdomes.com/"
+  category: geodesic-kit
+  blurb: "Long-running maker of fabric-covered event and dwelling geodesic domes; a common entry point for glamping and event domes."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [kit, fabric, glamping]
+
+- id: natural-spaces-domes
+  title: Natural Spaces Domes
+  url: "https://naturalspacesdomes.com/"
+  category: geodesic-kit
+  blurb: "Timber geodesic home kits with transparent pricing and planning guides — a solid reference for insulated dome dwellings."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [kit, timber, homes]
+
+- id: timberline-geodesics
+  title: Timberline Geodesics
+  url: "https://www.domehome.com/"
+  category: geodesic-kit
+  blurb: "Decades-old timber geodesic home-kit manufacturer (domehome.com), with an established owner community."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [kit, timber, homes]
+
+- id: ekodome
+  title: Ekodome
+  url: "https://ekodome.com/"
+  category: geodesic-kit
+  blurb: "Aluminium-frame geodesic kits and hubs spanning greenhouses to homes; parametric sizing."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [kit, aluminium, greenhouse]
+
+- id: growing-spaces
+  title: Growing Spaces (Growing Dome)
+  url: "https://growingspaces.com/"
+  category: geodesic-kit
+  blurb: "Polycarbonate 'Growing Dome' greenhouse kits engineered for year-round growing — a good real-world read on translucent-shell performance."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [greenhouse, polycarbonate, kit]
+
+- id: biodomes
+  title: Biodomes
+  url: "https://biodomes.org/"
+  category: geodesic-kit
+  blurb: "Architectural glass geodesic and freeform domes — the high end of transparent shells, with the thermal trade-offs that come with glass."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [glass, architectural, kit]
+
+- id: fdomes
+  title: FDomes
+  url: "https://fdomes.com/"
+  category: geodesic-kit
+  blurb: "Polish maker of insulated glamping and dwelling domes with a clean, well-documented product line."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [kit, glamping, insulated]
+
+- id: intershelter
+  title: Intershelter
+  url: "https://intershelter.com/"
+  category: geodesic-kit
+  blurb: "Fiberglass-composite portable dome shelters — rapidly deployable, insulated panelized domes."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [portable, composite, shelter]
+
+# ── Monolithic / sprayed concrete ────────────────────────────────────────
+- id: monolithic-dome-institute
+  title: Monolithic Dome Institute
+  url: "https://www.monolithic.org/"
+  category: monolithic
+  blurb: "The definitive resource on airform + shotcrete monolithic domes — construction, FEMA-grade disaster resistance, cost, and case studies."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [shotcrete, disaster-resistant, reference]
+
+- id: binishells
+  title: Binishells
+  url: "https://binishells.com/"
+  category: monolithic
+  blurb: "Air-inflated concrete shell technology (Bini system). Fast to raise — but read the documented failure history and engineer accordingly."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [concrete, air-formed, engineering]
+
+# ── Earthbag / SuperAdobe ────────────────────────────────────────────────
+- id: calearth
+  title: CalEarth
+  url: "https://calearth.org/"
+  category: earthbag
+  blurb: "Nader Khalili's institute for SuperAdobe (earthbag) domes — training, plans, and the ICC-ES evaluation that eases permitting."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [earthbag, superadobe, training]
+
+# ── Buckminster Fuller & geodesic theory ─────────────────────────────────
+- id: buckminster-fuller-institute
+  title: Buckminster Fuller Institute
+  url: "https://www.bfi.org/"
+  category: theory
+  blurb: "Keeper of Fuller's legacy — the origin of the geodesic dome and its synergetic geometry. Deep archive and design-science resources."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [history, geometry, fuller]
+
+- id: montreal-biosphere
+  title: Montreal Biosphère (Expo 67)
+  url: "https://www.parcjeandrapeau.com/en/biosphere-environment-museum-montreal/"
+  category: theory
+  blurb: "Fuller's iconic Expo 67 geodesic sphere, now an environment museum — the most famous geodesic dome ever built."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [landmark, fuller, history]
+
+- id: eden-project
+  title: Eden Project
+  url: "https://www.edenproject.com/"
+  category: theory
+  blurb: "The Cornwall biomes: giant geodesic ETFE 'bubble' domes housing rainforest and Mediterranean climates — geodesics at architectural scale."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [landmark, etfe, biome]
+
+# ── Inspiration / community ──────────────────────────────────────────────
+- id: hjertefolger-nature-house
+  title: Hjertefølger Nature House
+  url: "https://mymodernmet.com/hjertefolger-arctic-circle-cob-house/"
+  category: inspiration
+  blurb: "A cob house built inside a glass dome above the Arctic Circle — the closest verified cousin to the warm, biophilic one-room dome dream."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [biophilic, glass-dome, story]
+
+- id: domerama
+  title: Domerama
+  url: "http://www.domerama.com/"
+  category: inspiration
+  blurb: "Encyclopedic hobbyist resource on every facet of dome building — coverings, hubs, math, and coverings-that-actually-stop-leaks."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [reference, community, diy]
+
+# ── Geometry / software ──────────────────────────────────────────────────
+- id: desert-domes-calculator
+  title: Desert Domes — Dome Calculator
+  url: "https://www.desertdomes.com/domecalc.html"
+  category: software
+  blurb: "The classic strut-length calculator for 2v–6v geodesic domes — enter a radius, get your cut list. A rite of passage."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [calculator, geometry, struts]
+
+- id: acidome-calculator
+  title: Acidome — Dome Calculator
+  url: "https://acidome.com/lab/calc/"
+  category: software
+  blurb: "Powerful online geodesic calculator with connectors, coverings, and 3D preview — the modern successor to strut-length tables."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [calculator, 3d, geometry]
+
+- id: blender-geodesic-domes
+  title: Blender — Geodesic Domes Add-on
+  url: "https://extensions.blender.org/add-ons/geodesic-domes/"
+  category: software
+  blurb: "Official Blender extension for generating geodesic and hexasphere geometry — directly relevant to this repo's .blend workflow."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [blender, generator, geometry]
+
+- id: zip-tie-domes
+  title: Zip Tie Domes
+  url: "https://www.ziptiedomes.com/"
+  category: software
+  blurb: "Hub-connector systems and calculators for building geodesic domes from EMT conduit or wood — practical, buildable hardware and math."
+  verified: true
+  verifiedDate: "2026-07"
+  tags: [hubs, calculator, diy]

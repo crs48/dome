@@ -622,9 +622,9 @@ stateDiagram-v2
 - [x] `npm create astro@latest`; `npx astro add mdx sitemap tailwind`.
 - [x] Write `astro.config.mjs` with `site`, `base: '/dome'`, and the `image` block.
 - [x] Add `public/.nojekyll`.
-- [ ] Create `src/content.config.ts` with the `methods` + `projects` collections.
-- [ ] Populate `src/content/methods.yaml` from the comparison in this doc (8 rows, with pros/cons, caveats, sources).
-- [ ] Populate `src/content/projects.yaml` from the verified resource directory.
+- [x] Create `src/content.config.ts` with the `methods` + `projects` collections.
+- [x] Populate `src/content/methods.yaml` from the comparison in this doc (8 rows, with pros/cons, caveats, sources).
+- [x] Populate `src/content/projects.yaml` from the verified resource directory.
 - [ ] Build components: `Gallery.astro`, `MethodTable.astro`, `ProjectCard.astro`, a base `Layout.astro`.
 - [ ] Build pages: `index.astro`, `design.mdx`, `methods.astro`, `gallery.astro`, `resources.astro`, `about.mdx`.
 - [ ] Generate video poster frames into `public/videos/posters/`.
