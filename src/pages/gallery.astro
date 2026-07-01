@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import { renders, clips } from '../lib/media';
+---
+
+<Layout
+  title="Gallery"
+  description="All of the dome renders and AI concept clips — the full visual story of the one-room dome home."
+>
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <header class="max-w-3xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">Gallery</p>
+      <h1 class="mt-3 font-display text-4xl text-moss-deep">
+        Renders &amp; concept clips
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-muted">
+        {renders.length} Blender renders and {clips.length} AI concept clips.
+        The renders are the author's own work-in-progress; the clips are
+        AI-generated studies of biophilic dome interiors.
+      </p>
+    </header>
+
+    <div class="mt-12">
+      <Gallery renders={renders} clips={clips} />
+    </div>
+  </div>
+</Layout>

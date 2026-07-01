@@ -625,9 +625,9 @@ stateDiagram-v2
 - [x] Create `src/content.config.ts` with the `methods` + `projects` collections.
 - [x] Populate `src/content/methods.yaml` from the comparison in this doc (8 rows, with pros/cons, caveats, sources).
 - [x] Populate `src/content/projects.yaml` from the verified resource directory.
-- [ ] Build components: `Gallery.astro`, `MethodTable.astro`, `ProjectCard.astro`, a base `Layout.astro`.
-- [ ] Build pages: `index.astro`, `design.mdx`, `methods.astro`, `gallery.astro`, `resources.astro`, `about.mdx`.
-- [ ] Generate video poster frames into `public/videos/posters/`.
+- [x] Build components: `Gallery.astro`, `MethodTable.astro`, `ProjectCard.astro`, a base `Layout.astro`.
+- [x] Build pages: `index.astro`, `design.mdx`, `methods.astro`, `gallery.astro`, `resources.astro`, `about.mdx`.
+- [x] Generate video poster frames into `public/videos/posters/`.
 - [ ] Add `.github/workflows/deploy.yml`; set repo **Settings → Pages → Source = GitHub Actions**.
 - [ ] Write `README.md`: hero, one‑room thesis, render gallery, comparison table, resource directory, build/deploy instructions, license/attribution.
 - [ ] Add `LICENSE` (code) and `LICENSE-CONTENT` (media) + provenance note.

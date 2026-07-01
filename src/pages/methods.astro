@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MethodTable from '../components/MethodTable.astro';
+
+const caveats = [
+  {
+    title: 'Leaks are the defining dome problem',
+    body: 'Paneled domes (timber, poly, glass) have many non-vertical seams and hubs, no drainage plane, and they flex daily under solar heating. Seamless shells (Monolithic, Binishell) leak far less; shingle or heat-weld a continuous membrane on paneled ones.',
+  },
+  {
+    title: 'Condensation & ventilation',
+    body: 'Sealed, high-solar-gain shells sweat without deliberate ventilation — especially low-R glass and polycarbonate.',
+  },
+  {
+    title: 'Curved walls are hard to furnish',
+    body: 'Rectangular cabinetry and furniture fit curved walls poorly. Expect custom built-ins — which is partly why the one-room, few-objects layout works so well in a dome.',
+  },
+  {
+    title: 'Resale, financing, insurance, code',
+    body: 'Non-rectangular homes face appraisal, mortgage, and insurance friction. Stamped engineering (Monolithic, or CalEarth’s ICC-ES SuperAdobe) eases permitting.',
+  },
+];
+---
+
+<Layout
+  title="Build Methods"
+  description="An honest, cited comparison of eight dome build methods — aircrete, shotcrete, timber, polycarbonate, glass, Binishell, bioceramic, and earthbag — on cost, insulation, DIY-ability, and durability."
+>
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <header class="max-w-3xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">
+        Compare
+      </p>
+      <h1 class="mt-3 font-display text-4xl text-moss-deep">Build methods</h1>
+      <p class="mt-4 text-lg leading-relaxed text-muted">
+        Plenty of sites sell domes. Few give an honest, cross-method comparison.
+        Here are eight ways to build a dome, weighed on cost, insulation,
+        DIY-ability, durability, and daylight — with the uncertainty flags left
+        in, not sanded off.
+      </p>
+    </header>
+
+    <div class="mt-10">
+      <MethodTable />
+    </div>
+
+    <!-- Four honest caveats about dome living -->
+    <section class="mt-16">
+      <h2 class="font-display text-2xl text-moss-deep">
+        Four honest caveats about dome living
+      </h2>
+      <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+        {
+          caveats.map((c, i) => (
+            <li class="rounded-panel border border-line bg-surface/60 p-6">
+              <p class="font-mono text-xs text-clay">{String(i + 1).padStart(2, '0')}</p>
+              <h3 class="mt-1 text-lg font-semibold text-moss-deep">{c.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted">{c.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <p class="mt-10 text-xs text-muted">
+      Cost, insulation, and durability figures are planning bands drawn from the
+      sources linked under each method — not quotes. Verify locally before you
+      build.
+    </p>
+  </div>
+</Layout>

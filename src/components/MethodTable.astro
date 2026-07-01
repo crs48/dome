@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+
+const ORDER = [
+  'aircrete',
+  'shotcrete-monolithic',
+  'timber-geodesic',
+  'polycarbonate-geodesic',
+  'glass-geodesic',
+  'binishell',
+  'bioceramic-geoship',
+  'earthbag-superadobe',
+];
+
+const methods = (await getCollection('methods')).sort(
+  (a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id),
+);
+
+const lightClass: Record<string, string> = {
+  opaque: 'bg-surface-2 text-muted',
+  translucent: 'bg-sky/20 text-sky',
+  transparent: 'bg-sky/30 text-sky',
+};
+const diyClass: Record<string, string> = {
+  low: 'bg-clay/15 text-clay',
+  medium: 'bg-surface-2 text-muted',
+  high: 'bg-moss/15 text-moss',
+  highest: 'bg-moss/25 text-moss-deep',
+};
+---
+
+<!-- Quick-scan comparison -->
+<div class="overflow-x-auto rounded-panel border border-line">
+  <table class="w-full border-collapse text-left text-sm">
+    <thead class="bg-surface text-xs uppercase tracking-wide text-muted">
+      <tr>
+        <th class="px-4 py-3 font-semibold">Method</th>
+        <th class="px-4 py-3 font-semibold">Cost</th>
+        <th class="px-4 py-3 font-semibold">Insulation</th>
+        <th class="px-4 py-3 font-semibold">DIY</th>
+        <th class="px-4 py-3 font-semibold">Light</th>
+        <th class="px-4 py-3 font-semibold">Best use</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        methods.map((m) => (
+          <tr class="border-t border-line align-top">
+            <td class="px-4 py-3 font-semibold text-moss-deep">
+              <a href={`#${m.id}`} class="hover:underline">
+                {m.data.name}
+              </a>
+            </td>
+            <td class="px-4 py-3 text-muted">{m.data.costPerSqFt}</td>
+            <td class="px-4 py-3 text-muted">{m.data.insulation}</td>
+            <td class="px-4 py-3">
+              <span class:list={['rounded px-2 py-0.5 text-xs font-medium capitalize', diyClass[m.data.diy]]}>
+                {m.data.diy}
+              </span>
+            </td>
+            <td class="px-4 py-3">
+              <span class:list={['rounded px-2 py-0.5 text-xs font-medium capitalize', lightClass[m.data.light]]}>
+                {m.data.light}
+              </span>
+            </td>
+            <td class="px-4 py-3 text-muted">{m.data.bestUse}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Per-method detail: pros / cons / caveats / sources -->
+<div class="mt-12 space-y-8">
+  {
+    methods.map((m) => (
+      <article id={m.id} class="scroll-mt-20 rounded-panel border border-line bg-surface/60 p-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <h3 class="text-xl font-semibold text-moss-deep">{m.data.name}</h3>
+          <p class="text-sm text-muted">
+            {m.data.costPerSqFt} · {m.data.durability}
+          </p>
+        </div>
+
+        <div class="mt-5 grid gap-6 sm:grid-cols-2">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wide text-moss">Pros</p>
+            <ul class="mt-2 space-y-1.5 text-sm text-ink">
+              {m.data.pros.map((p) => (
+                <li class="flex gap-2">
+                  <span aria-hidden="true" class="text-moss">+</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wide text-clay">Cons</p>
+            <ul class="mt-2 space-y-1.5 text-sm text-ink">
+              {m.data.cons.map((c) => (
+                <li class="flex gap-2">
+                  <span aria-hidden="true" class="text-clay">−</span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {m.data.caveats.length > 0 && (
+          <div class="mt-5 rounded-lg border-l-4 border-clay bg-clay/5 px-4 py-3">
+            <p class="text-xs font-semibold uppercase tracking-wide text-clay">
+              Uncertainty flags
+            </p>
+            <ul class="mt-1.5 space-y-1 text-sm text-muted">
+              {m.data.caveats.map((c) => (
+                <li>{c}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
+          {m.data.vendorUrl && (
+            <a
+              href={m.data.vendorUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-medium text-moss underline underline-offset-2"
+            >
+              Vendor ↗
+            </a>
+          )}
+          {m.data.sources.length > 0 && (
+            <span>
+              Sources:{' '}
+              {m.data.sources.map((s, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  <a href={s} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-moss">
+                    [{i + 1}]
+                  </a>
+                </>
+              ))}
+            </span>
+          )}
+        </div>
+      </article>
+    ))
+  }
+</div>

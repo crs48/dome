@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, url, blurb, verified, verifiedDate, tags } = project.data;
+let host = url;
+try {
+  host = new URL(url).host.replace(/^www\./, '');
+} catch {
+  /* keep raw url */
+}
+---
+
+<article
+  class="flex h-full flex-col rounded-panel border border-line bg-surface/60 p-5 transition-colors hover:border-moss/50"
+>
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-display text-lg font-semibold text-moss-deep">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="after:content-['_↗'] after:text-clay hover:underline"
+      >
+        {title}
+      </a>
+    </h3>
+  </div>
+
+  <p class="mt-0.5 font-mono text-xs text-muted">{host}</p>
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-ink">{blurb}</p>
+
+  <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+    {
+      tags.map((t) => (
+        <span class="rounded-full bg-surface-2 px-2 py-0.5 text-muted">
+          {t}
+        </span>
+      ))
+    }
+    {
+      verified && (
+        <span
+          class="ml-auto inline-flex items-center gap-1 text-moss"
+          title={verifiedDate ? `Verified ${verifiedDate}` : 'Verified'}
+        >
+          <span aria-hidden="true">✓</span>
+          <span>verified{verifiedDate ? ` ${verifiedDate}` : ''}</span>
+        </span>
+      )
+    }
+  </div>
+</article>

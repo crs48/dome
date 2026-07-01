@@ -19,6 +19,8 @@ export default defineConfig({
     responsiveStyles: true,
   },
   vite: {
-    plugins: [tailwindcss()],
+    // Cast: @tailwindcss/vite and Astro resolve slightly different Vite type
+    // versions, so the Plugin types differ nominally. Runtime is unaffected.
+    plugins: [/** @type {any} */ (tailwindcss())],
   },
 });
