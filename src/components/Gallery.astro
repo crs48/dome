@@ -1,31 +1,100 @@
 ---
 import { Picture } from 'astro:assets';
 import { withBase } from '../lib/base';
-import { renders as allRenders, clips as allClips, posterFor } from '../lib/media';
-import type { Render, Clip } from '../lib/media';
+import {
+  renders as allRenders,
+  clips as allClips,
+  photos as allPhotos,
+  posterFor,
+} from '../lib/media';
+import type { Render, Clip, Photo } from '../lib/media';
 
 interface Props {
+  photos?: Photo[];
   renders?: Render[];
   clips?: Clip[];
   columns?: 2 | 3;
 }
 
-const { renders = allRenders, clips = allClips, columns = 3 } = Astro.props;
+const {
+  photos = allPhotos,
+  renders = allRenders,
+  clips = allClips,
+  columns = 3,
+} = Astro.props;
 
 const gridCols =
-  columns === 2
-    ? 'sm:grid-cols-2'
-    : 'sm:grid-cols-2 lg:grid-cols-3';
+  columns === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3';
 ---
 
 <div class="space-y-14">
   {
+    photos.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-semibold text-moss-deep">Concept art</h2>
+        <p class="mt-1 text-sm text-muted">
+          AI-generated stills of the one-room dome, made with Grok Imagine — the
+          highest-fidelity look at the whole idea.
+        </p>
+        <ul class:list={['mt-6 grid grid-cols-1 gap-5', gridCols]}>
+          {photos.map((p) => (
+            <li class="overflow-hidden rounded-panel border border-line bg-surface">
+              <Picture
+                src={p.image}
+                formats={['avif', 'webp']}
+                alt={p.caption}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                loading="lazy"
+                class="w-full object-cover"
+              />
+              <figcaption class="px-4 py-3 text-sm text-muted">
+                {p.caption}
+              </figcaption>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    clips.length > 0 && (
+      <section>
+        <h2 class="text-2xl font-semibold text-moss-deep">Concept films</h2>
+        <p class="mt-1 text-sm text-muted">
+          AI-generated "dollhouse" cutaways and interior fly-throughs (Grok
+          Imagine). Tap any film to play.
+        </p>
+        <ul class:list={['mt-6 grid grid-cols-1 gap-5', gridCols]}>
+          {clips.map((c) => (
+            <li class="overflow-hidden rounded-panel border border-line bg-surface">
+              <video
+                controls
+                preload="metadata"
+                playsinline
+                poster={withBase(posterFor(c.file))}
+                class="aspect-[2/3] w-full bg-moss-deep object-cover"
+              >
+                <source src={withBase(`/videos/${c.file}`)} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption class="px-4 py-3 text-sm text-muted">
+                {c.caption}
+              </figcaption>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
     renders.length > 0 && (
       <section>
-        <h2 class="text-2xl font-semibold text-moss-deep">Renders</h2>
+        <h2 class="text-2xl font-semibold text-moss-deep">3D studies</h2>
         <p class="mt-1 text-sm text-muted">
-          The author's own Blender work-in-progress — an honest iteration strip
-          from bare shell to furnished room.
+          The author's own Blender work-in-progress — rough and low-fi, kept as
+          an honest iteration strip from bare shell to furnished room.
         </p>
         <ul class:list={['mt-6 grid grid-cols-1 gap-5', gridCols]}>
           {renders.map((r) => (
@@ -47,37 +116,6 @@ const gridCols =
                   </span>
                 )}
                 <span class="text-muted">{r.caption}</span>
-              </figcaption>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )
-  }
-
-  {
-    clips.length > 0 && (
-      <section>
-        <h2 class="text-2xl font-semibold text-moss-deep">Concept clips</h2>
-        <p class="mt-1 text-sm text-muted">
-          AI-generated "dollhouse" cutaways and interior fly-throughs. Used for
-          study — see <a class="underline hover:text-moss" href={withBase('/about')}>About</a> for provenance.
-        </p>
-        <ul class:list={['mt-6 grid grid-cols-1 gap-5', gridCols]}>
-          {clips.map((c) => (
-            <li class="overflow-hidden rounded-panel border border-line bg-surface">
-              <video
-                controls
-                preload="metadata"
-                playsinline
-                poster={withBase(posterFor(c.file))}
-                class="aspect-[9/12] w-full bg-moss-deep object-cover"
-              >
-                <source src={withBase(`/videos/${c.file}`)} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <figcaption class="px-4 py-3 text-sm text-muted">
-                {c.caption}
               </figcaption>
             </li>
           ))}

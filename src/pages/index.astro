@@ -1,8 +1,14 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import { withBase } from '../lib/base';
-import { heroRender, iterationStory } from '../lib/media';
+import {
+  heroPhoto,
+  iterationStory,
+  featuredClip,
+  spotlightClips,
+  posterFor,
+} from '../lib/media';
 
 const pillars = [
   { icon: '⬡', title: 'Shell', body: '5/8-sphere geodesic, translucent panels, a central oculus skylight.' },
@@ -17,9 +23,9 @@ const featured = iterationStory.slice(0, 3);
 ---
 
 <Layout title="Home">
-  <!-- Hero -->
+  <!-- Hero: the AI concept still leads -->
   <section class="relative overflow-hidden border-b border-line">
-    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
       <div>
         <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">
           A geodesic dome home
@@ -40,26 +46,31 @@ const featured = iterationStory.slice(0, 3);
             See the design →
           </a>
           <a
-            href={withBase('/methods')}
+            href={withBase('/gallery')}
             class="rounded-full border border-line px-5 py-2.5 text-sm font-semibold text-moss-deep transition-colors hover:border-moss"
           >
-            Compare build methods
+            Gallery &amp; films
           </a>
         </div>
       </div>
 
-      <figure class="overflow-hidden rounded-panel border border-line bg-surface-2 shadow-sm">
-        <Image
-          src={heroRender.image}
-          alt={heroRender.caption}
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          loading="eager"
-          class="aspect-[16/10] w-full object-cover"
-        />
-        <figcaption class="px-4 py-2 text-xs text-muted">
-          {heroRender.caption} — author's Blender render.
-        </figcaption>
-      </figure>
+      {
+        heroPhoto && (
+          <figure class="mx-auto w-full max-w-sm overflow-hidden rounded-panel border border-line bg-surface-2 shadow-md lg:max-w-md">
+            <Picture
+              src={heroPhoto.image}
+              formats={['avif', 'webp']}
+              alt={heroPhoto.caption}
+              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 100vw"
+              loading="eager"
+              class="w-full object-cover"
+            />
+            <figcaption class="px-4 py-2 text-xs text-muted">
+              AI-generated concept (Grok Imagine).
+            </figcaption>
+          </figure>
+        )
+      }
     </div>
   </section>
 
@@ -87,53 +98,109 @@ const featured = iterationStory.slice(0, 3);
     </ul>
   </section>
 
-  <!-- Featured renders -->
-  <section class="border-t border-line bg-surface/50">
+  <!-- Concept films — the AI-generated art, front and centre -->
+  <section class="border-y border-line bg-moss-deep text-canvas">
     <div class="mx-auto max-w-6xl px-5 py-16">
-      <div class="flex items-end justify-between gap-4">
+      <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 class="font-display text-2xl text-moss-deep sm:text-3xl">
-            An honest iteration
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">
+            Concept films
+          </p>
+          <h2 class="mt-2 font-display text-2xl text-canvas sm:text-3xl">
+            The dome, imagined
           </h2>
-          <p class="mt-2 max-w-xl text-muted">
-            The design was built up step by step in Blender — from a bare shell
-            to a furnished, planted room.
+          <p class="mt-2 max-w-xl text-sm leading-relaxed text-canvas/70">
+            AI-generated concept art and films — "dollhouse" cutaways and slow
+            interior fly-throughs of the biophilic one-room dome, made with Grok
+            Imagine.
           </p>
         </div>
         <a
           href={withBase('/gallery')}
-          class="hidden shrink-0 text-sm font-semibold text-moss underline underline-offset-4 sm:inline"
+          class="shrink-0 text-sm font-semibold text-canvas underline underline-offset-4 hover:text-clay"
         >
-          Full gallery →
+          All 15 films →
         </a>
       </div>
-      <ul class="mt-8 grid gap-5 sm:grid-cols-3">
-        {
-          featured.map((r) => (
-            <li class="overflow-hidden rounded-panel border border-line bg-canvas">
-              <Image
-                src={r.image}
-                alt={r.caption}
-                sizes="(min-width: 640px) 33vw, 100vw"
-                loading="lazy"
-                class="aspect-[16/10] w-full object-cover"
-              />
-              <p class="px-4 py-3 text-sm text-muted">{r.caption}</p>
-            </li>
-          ))
-        }
-      </ul>
+
+      <div class="mt-8 grid gap-5 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+        <!-- Featured autoplay loop -->
+        <figure class="overflow-hidden rounded-panel border border-canvas/15 bg-black/20">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster={withBase(posterFor(featuredClip.file))}
+            class="mx-auto max-h-[34rem] w-full object-contain"
+          >
+            <source src={withBase(`/videos/${featuredClip.file}`)} type="video/mp4" />
+          </video>
+        </figure>
+
+        <!-- Spotlight grid (click to play) -->
+        <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2">
+          {
+            spotlightClips.map((c) => (
+              <li class="overflow-hidden rounded-lg border border-canvas/15 bg-black/20">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster={withBase(posterFor(c.file))}
+                  class="aspect-[2/3] w-full object-cover"
+                >
+                  <source src={withBase(`/videos/${c.file}`)} type="video/mp4" />
+                </video>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3D studies (honest low-fi work-in-progress) -->
+  <section class="mx-auto max-w-6xl px-5 py-16">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="font-display text-2xl text-moss-deep sm:text-3xl">
+          The 3D studies
+        </h2>
+        <p class="mt-2 max-w-xl text-muted">
+          Alongside the films, the design was blocked out step by step in
+          Blender — rough, low-fi work-in-progress, shown honestly as an
+          iteration strip.
+        </p>
+      </div>
       <a
         href={withBase('/gallery')}
-        class="mt-6 inline-block text-sm font-semibold text-moss underline underline-offset-4 sm:hidden"
+        class="hidden shrink-0 text-sm font-semibold text-moss underline underline-offset-4 sm:inline"
       >
         Full gallery →
       </a>
     </div>
+    <ul class="mt-8 grid gap-5 sm:grid-cols-3">
+      {
+        featured.map((r) => (
+          <li class="overflow-hidden rounded-panel border border-line bg-surface/60">
+            <Image
+              src={r.image}
+              alt={r.caption}
+              sizes="(min-width: 640px) 33vw, 100vw"
+              loading="lazy"
+              class="aspect-[16/10] w-full object-cover"
+            />
+            <p class="px-4 py-3 text-sm text-muted">{r.caption}</p>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 
   <!-- Resource CTA -->
-  <section class="mx-auto max-w-6xl px-5 py-16">
+  <section class="mx-auto max-w-6xl px-5 pb-16">
     <div class="rounded-panel border border-moss/30 bg-moss/5 p-8 text-center">
       <h2 class="font-display text-2xl text-moss-deep">
         Not selling domes — comparing them

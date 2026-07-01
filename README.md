@@ -9,9 +9,9 @@ study, and an honest, cited resource for anyone thinking about building a dome.
 
 **[🌐 Live site → crs48.github.io/dome](https://crs48.github.io/dome/)**
 
-<img src="src/assets/renders/dome_with_real_plants.png" alt="Biophilic one-room dome interior" width="720">
+<img src="src/assets/photos/imagine-cbd1317c.jpg" alt="The one-room dome interior: rope net loft, gymnastic rings, freestanding tub, plants, and wall bars" width="440">
 
-<sub><i>Author's Blender render — biophilic planting inside the 5/8-sphere shell.</i></sub>
+<sub><i>AI-generated concept (Grok Imagine) — the whole one-room idea in a single frame.</i></sub>
 
 </div>
 
@@ -31,30 +31,34 @@ every function shares the same light:
 | **≋ Bathe** | A freestanding tub, out in the daylight |
 | **☀ Light** | Biophilic daylight from every angle |
 
-## An honest iteration
+## Concept art & films
 
-The design was grown in Blender one layer at a time — a bare shell, then a
-floor, a kitchen, furniture, rings, and plants.
+The vibe lives in the AI-generated concept art and films — 15 "dollhouse"
+cutaways and slow interior fly-throughs, all made with **Grok Imagine**. They're
+the high-fidelity look at the one-room dome. **Click a frame to watch on the
+live site:**
+
+<div align="center">
+<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/342cfa18-2294-4dc2-85a2-f21e58017bfc.jpg" alt="Concept film — isometric cutaway" width="220"></a>
+<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/59f04b2d-63b1-4ea4-8aa1-14c82a2a741d.jpg" alt="Concept film — interior fly-through" width="220"></a>
+<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/e6b540f9-7b7a-4dd2-87c2-d0172a804181.jpg" alt="Concept film — interior fly-through" width="220"></a>
+</div>
+
+<sub>GitHub READMEs don't autoplay relative-path video, so these are poster
+frames linking to the <a href="https://crs48.github.io/dome/gallery">live
+gallery</a>, where all 15 films play.</sub>
+
+## The 3D studies
+
+Alongside the films, the design was blocked out in Blender one layer at a time —
+a bare shell, then a floor, a kitchen, furniture, rings, and plants. Rough,
+low-fi work-in-progress, shown honestly:
 
 <div align="center">
 <img src="src/assets/renders/dome_render.png" alt="Bare translucent geodesic shell" width="270">
 <img src="src/assets/renders/dome_with_kitchen.png" alt="Perimeter kitchen" width="270">
 <img src="src/assets/renders/dome_with_rings.png" alt="Gymnastic rings from the apex" width="270">
 </div>
-
-The renders are rough and honest work-in-progress. Alongside them, a set of
-AI-generated "dollhouse" cutaways explore the same biophilic interior — **click a
-frame to watch on the live site**:
-
-<div align="center">
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/342cfa18-2294-4dc2-85a2-f21e58017bfc.jpg" alt="Concept clip — isometric cutaway" width="220"></a>
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/59f04b2d-63b1-4ea4-8aa1-14c82a2a741d.jpg" alt="Concept clip — interior fly-through" width="220"></a>
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/e6b540f9-7b7a-4dd2-87c2-d0172a804181.jpg" alt="Concept clip — interior fly-through" width="220"></a>
-</div>
-
-<sub>GitHub READMEs don't autoplay relative-path video, so these are poster
-frames linking to the <a href="https://crs48.github.io/dome/gallery">live
-gallery</a>, where all 15 clips play.</sub>
 
 ## Build methods — the honest comparison
 
@@ -117,9 +121,10 @@ links and `public/` assets are routed through `import.meta.env.BASE_URL`.
 ```
 ├── .github/workflows/deploy.yml   # GitHub Pages CI
 ├── astro.config.mjs               # site + base:/dome + responsive images
-├── public/videos/                 # 15 concept clips (+ posters/)
+├── public/videos/                 # 15 AI concept films (+ posters/)
 ├── src/
-│   ├── assets/renders/            # author's Blender PNG renders → <Image>/<Picture>
+│   ├── assets/photos/             # AI concept stills (Grok Imagine) → <Picture>
+│   ├── assets/renders/            # Blender 3D-study PNGs → <Image>/<Picture>
 │   ├── content/                   # methods.yaml + projects.yaml (content collections)
 │   ├── components/ · layouts/ · pages/
 │   └── lib/                       # base-URL helper + media manifest
@@ -130,13 +135,10 @@ links and `public/` assets are routed through `import.meta.env.BASE_URL`.
 ## License & attribution
 
 - **Code** — MIT (see [`LICENSE`](LICENSE)).
-- **Renders & `.blend` files & prose** — the author's own work, CC BY-NC 4.0
-  (see [`LICENSE-CONTENT`](LICENSE-CONTENT)).
-- **AI concept clips** (`public/videos/`) — AI-generated studies; rights are
-  unsettled. Reference only, not reusable stock.
-- **Reference photo** (`2d/imagine-cbd1317c.jpg`) — appears to be a third
-  party's copyrighted work. It inspired the project but is **deliberately not
-  published on the site** pending licensing. If you're the rightsholder, please
-  open an issue.
+- **All media & prose** — the author's own work, CC BY-NC 4.0 (see
+  [`LICENSE-CONTENT`](LICENSE-CONTENT)). This covers the AI concept art & films
+  (`src/assets/photos/`, `public/videos/`) made with Grok Imagine, the Blender
+  renders (`src/assets/renders/`) and `.blend` sources (`design/`), and the
+  written prose.
 
 <div align="center"><sub>Built with Astro + Blender · warm paper, moss, clay, and daylight.</sub></div>

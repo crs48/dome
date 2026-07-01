@@ -4,8 +4,9 @@ description: The story of the one-room dome — a single daylit volume under a 5
 ---
 
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import { withBase } from '../lib/base';
+import { heroPhoto } from '../lib/media';
 import bare from '../assets/renders/dome_render.png';
 import kitchen from '../assets/renders/dome_with_kitchen.png';
 import rings from '../assets/renders/dome_with_rings.png';
@@ -23,6 +24,23 @@ import geometry from '../assets/renders/dome_5_8_sphere_correct.png';
 The concept is a single daylit volume under a **5/8-sphere geodesic** shell.
 No hallways, no spare rooms — you cook, sleep, bathe, move, and grow plants in
 one place, and every function shares the same light.
+
+Here it is, whole — an AI-generated concept (Grok Imagine) that captures the
+vibe better than any of the rough 3D studies can: a rope net loft under the
+oculus, gymnastic rings, a freestanding tub, plants along the glazed band, and
+wall bars, all in one room.
+
+{heroPhoto && (
+  <Picture
+    src={heroPhoto.image}
+    formats={['avif', 'webp']}
+    alt={heroPhoto.caption}
+    sizes="(min-width: 768px) 44rem, 100vw"
+    class="mx-auto rounded-panel border border-line"
+  />
+)}
+
+Underneath that dream is real geometry. It starts as a bare, translucent shell.
 
 <Image src={bare} alt="Bare translucent geodesic shell" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
 
