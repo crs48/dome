@@ -49,10 +49,38 @@ export const renders: Render[] = Object.entries(renderModules)
 // The stepped iteration story (Bare → … → Kitchen), for the /design timeline.
 export const iterationStory: Render[] = renders.filter((r) => r.step !== undefined);
 
-// A hero render used where the reference photo would otherwise sit (the photo
-// is withheld pending licensing — see the About page).
+// A hero-quality render, used as a secondary visual alongside the AI stills.
 export const heroRender: Render =
   renders.find((r) => r.file === 'dome_with_real_plants.png') ?? renders[0];
+
+// ── AI-generated stills (Grok Imagine) ───────────────────────────────────
+const photoModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/photos/*.{jpg,jpeg,png}',
+  { eager: true },
+);
+
+export interface Photo {
+  file: string;
+  image: ImageMetadata;
+  caption: string;
+}
+
+const PHOTO_META: Record<string, string> = {
+  'imagine-cbd1317c.jpg':
+    'The one-room dome, whole: a rope net loft under a central oculus, gymnastic rings, a freestanding tub, plants along the glazed band, and wall bars — all in a single daylit room.',
+};
+
+export const photos: Photo[] = Object.entries(photoModules)
+  .map(([path, mod]) => ({ file: baseName(path), image: mod.default }))
+  .map((p) => ({
+    ...p,
+    caption: PHOTO_META[p.file] ?? 'AI-generated concept of the one-room dome.',
+  }));
+
+// The hero still — the highest-fidelity view of the whole concept.
+export const heroPhoto: Photo | undefined = photos.find(
+  (p) => p.file === 'imagine-cbd1317c.jpg',
+);
 
 export interface Clip {
   file: string; // filename in public/videos/
@@ -83,3 +111,14 @@ export const clips: Clip[] = [
 export function posterFor(file: string): string {
   return `/videos/posters/${file.replace(/\.mp4$/, '.jpg')}`;
 }
+
+// A small clip used for the muted autoplay loop on the home hero (chosen for
+// file size so the vibe lands without a heavy download).
+export const featuredClip: Clip =
+  clips.find((c) => c.file === 'b8dafdbe-11c7-43c9-a88c-6bc83be1c6c7.mp4') ??
+  clips[0];
+
+// A handful of clips to spotlight on the home page (the rest live in /gallery).
+export const spotlightClips: Clip[] = clips
+  .filter((c) => c.file !== featuredClip.file)
+  .slice(0, 6);

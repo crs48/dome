@@ -1,28 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Gallery from '../components/Gallery.astro';
-import { renders, clips } from '../lib/media';
+import { renders, clips, photos } from '../lib/media';
 ---
 
 <Layout
   title="Gallery"
-  description="All of the dome renders and AI concept clips — the full visual story of the one-room dome home."
+  description="AI-generated concept art and films of the one-room dome, plus the Blender 3D studies — the full visual story."
 >
   <div class="mx-auto max-w-6xl px-5 py-14">
     <header class="max-w-3xl">
       <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">Gallery</p>
       <h1 class="mt-3 font-display text-4xl text-moss-deep">
-        Renders &amp; concept clips
+        Concept art, films &amp; studies
       </h1>
       <p class="mt-4 text-lg leading-relaxed text-muted">
-        {renders.length} Blender renders and {clips.length} AI concept clips.
-        The renders are the author's own work-in-progress; the clips are
-        AI-generated studies of biophilic dome interiors.
+        {photos.length} AI concept still{photos.length === 1 ? '' : 's'} and
+        {clips.length} AI films (made with Grok Imagine), plus {renders.length}
+        Blender 3D studies. The AI art carries the vibe; the renders show the
+        honest work-in-progress.
       </p>
     </header>
 
     <div class="mt-12">
-      <Gallery renders={renders} clips={clips} />
+      <Gallery photos={photos} renders={renders} clips={clips} />
     </div>
   </div>
 </Layout>
