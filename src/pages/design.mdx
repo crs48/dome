@@ -1,0 +1,87 @@
+---
+title: The Design
+description: The story of the one-room dome — a single daylit volume under a 5/8-sphere geodesic shell, built up step by step in Blender.
+---
+
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { withBase } from '../lib/base';
+import bare from '../assets/renders/dome_render.png';
+import kitchen from '../assets/renders/dome_with_kitchen.png';
+import rings from '../assets/renders/dome_with_rings.png';
+import plants from '../assets/renders/dome_with_real_plants.png';
+import geometry from '../assets/renders/dome_5_8_sphere_correct.png';
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+
+<div class="mx-auto max-w-3xl px-5 py-14 prose-dome">
+
+<p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">The Design</p>
+
+# One big room
+
+The concept is a single daylit volume under a **5/8-sphere geodesic** shell.
+No hallways, no spare rooms — you cook, sleep, bathe, move, and grow plants in
+one place, and every function shares the same light.
+
+<Image src={bare} alt="Bare translucent geodesic shell" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
+
+It starts as a bare, translucent shell — a **5/8 sphere**, taller than a
+hemisphere so the walls stand up before they curve overhead. That extra
+eighth is what makes the interior livable instead of a shallow igloo.
+
+## Building the room, one layer at a time
+
+The design wasn't drawn all at once. It was grown in Blender, one honest layer
+at a time: a floor, then a kitchen, then furniture, then the things that make a
+dome feel like *this* dome.
+
+<Image src={kitchen} alt="Perimeter kitchen counter and floating shelves" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
+
+The **kitchen hugs the perimeter** — a curved counter and floating shelves that
+follow the shell instead of fighting it. Curved walls are famously hard to
+furnish; the answer is to stop bringing in rectangles and let the built-ins
+trace the curve.
+
+<Image src={rings} alt="Gymnastic rings hung from the apex" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
+
+From the apex hang **gymnastic rings**. The open center of a dome is its best
+feature — so the design keeps it clear and hangs movement from the top: rings,
+a climbing-net loft, wall bars around the edge. The room *is* the gym.
+
+<Image src={plants} alt="Biophilic planting along the glazed band" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
+
+Then **plants** — along the glazed band where the daylight lands. This is the
+biophilic heart of the idea: a warm, living, one-room interior, more terrarium
+than house.
+
+## The geometry
+
+<Image src={geometry} alt="Corrected 5/8-sphere geodesic geometry study" sizes="(min-width: 768px) 44rem, 100vw" class="rounded-panel border border-line" />
+
+Underneath the mood is real geometry — a corrected **5/8-sphere geodesic**
+frequency study. Getting the sphere fraction right is what gives the room its
+usable wall height and its central oculus.
+
+## Concept clips
+
+Alongside the renders, a set of AI-generated "dollhouse" cutaways explore the
+same idea — isometric slices and slow interior fly-throughs of biophilic dome
+rooms. They're studies, not photographs (see <a href={withBase('/about')}>About</a> for provenance).
+
+<video
+  controls
+  preload="metadata"
+  playsinline
+  poster={withBase('/videos/posters/342cfa18-2294-4dc2-85a2-f21e58017bfc.jpg')}
+  class="w-full rounded-panel border border-line bg-moss-deep"
+>
+  <source src={withBase('/videos/342cfa18-2294-4dc2-85a2-f21e58017bfc.mp4')} type="video/mp4" />
+</video>
+
+See the rest in the <a href={withBase('/gallery')}>full gallery</a>, or weigh how
+you'd actually build one on <a href={withBase('/methods')}>Build Methods</a>.
+
+</div>
+
+</Layout>

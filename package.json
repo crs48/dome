@@ -1,0 +1,29 @@
+{
+  "name": "dome",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "A public showcase and honest resource for geodesic dome homes — one big multifunctional room under a 5/8-sphere shell.",
+  "homepage": "https://crs48.github.io/dome/",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.20.8"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "posters": "node scripts/make-posters.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "4.3.14",
+    "@astrojs/sitemap": "3.7.3",
+    "@tailwindcss/vite": "4.3.2",
+    "astro": "5.18.2",
+    "sharp": "^0.34.2",
+    "tailwindcss": "4.3.2",
+    "typescript": "^5.7.3"
+  }
+}

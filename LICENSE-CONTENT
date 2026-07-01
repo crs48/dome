@@ -1,0 +1,48 @@
+# Content & Media License
+
+The *code* in this repository is licensed under the MIT License (see `LICENSE`).
+The *content and media* are licensed as described below. Different assets have
+different provenance — please respect the distinctions.
+
+## 1. Author's own work — CC BY-NC 4.0
+
+The following are the original work of the author (Chris Smothers) and are
+licensed under the **Creative Commons Attribution-NonCommercial 4.0
+International License** (CC BY-NC 4.0):
+
+- The 3D renders in `src/assets/renders/` (`dome_*.png`)
+- The Blender source files in `design/` (`dome*.blend`)
+- The written prose on the site (the design narrative, comparisons, and
+  directory annotations)
+
+You are free to share and adapt this material for **non-commercial** purposes,
+with **attribution** to "Chris Smothers — The One-Room Dome" and a link back to
+this repository. Full license text:
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+## 2. AI-generated concept clips — study/reference only
+
+The concept clips in `public/videos/` (`*.mp4`) are AI-generated studies.
+Copyright in AI output is legally unsettled and any rights may be subject to
+the generating service's terms of use. They are provided here **for reference
+and study only**. Do not assume they are freely reusable stock; do not
+redistribute them as your own.
+
+## 3. Reference photograph — third-party, NOT published
+
+The photograph `2d/imagine-cbd1317c.jpg` appears to be a **third party's
+copyrighted work** (a real wooden geodesic dome home). It inspired this project
+but its licensing has **not** been cleared. Accordingly:
+
+- It is **not** published or featured on the website.
+- It is **not** moved into the site's asset pipeline (`src/assets/photos/`).
+- It must **not** be reused or redistributed without permission from the
+  rightsholder.
+
+If you are the rightsholder and want this asset credited or removed from the
+source repository, please open an issue.
+
+## Third-party dependencies
+
+Site dependencies (Astro, Tailwind CSS, etc.) are governed by their own
+licenses, available in `node_modules` and via each project.

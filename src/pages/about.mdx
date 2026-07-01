@@ -1,0 +1,70 @@
+---
+title: About
+description: Colophon, provenance, and licensing for the one-room dome project — what's the author's own work, what's AI-generated, and how it's all licensed.
+---
+
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/base';
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+
+<div class="mx-auto max-w-3xl px-5 py-14 prose-dome">
+
+<p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">Colophon</p>
+
+# About this project
+
+**The One-Room Dome** is a personal design study — a geodesic dome home imagined
+as a single, daylit, multifunctional room — paired with an honest, cited
+resource for anyone thinking about building a dome of their own.
+
+It is *not* a product and *not* a sales site. The
+<a href={withBase('/methods')}>build-method comparison</a> and the
+<a href={withBase('/resources')}>resource directory</a> deliberately keep the
+uncertainty flags in: the aircrete R-value dispute, Binishell's failure history,
+Geoship's pre-mainstream status, and the fact that domes leak.
+
+## Provenance & licensing
+
+Different parts of this repository have different origins, and they are licensed
+differently. Please respect that.
+
+- **3D renders (`src/assets/renders/`) and Blender sources (`design/`)** are the
+  author's own work. They're licensed for reuse under
+  **Creative Commons Attribution–NonCommercial 4.0** (see `LICENSE-CONTENT`).
+- **The site's code** — the Astro components, pages, and configuration — is
+  licensed under the **MIT License** (see `LICENSE`).
+- **AI concept clips (`public/videos/`)** are AI-generated studies. They are
+  presented here for illustration; rights in AI output are unsettled and depend
+  on the generator's terms. Treat them as reference, not as freely reusable
+  stock.
+- **The reference photo** that inspired the whole idea — a real wooden geodesic
+  dome home with gym rings, a climbing-net loft, a freestanding tub, and a
+  planted glazed band — appears to be a **third party's copyrighted photograph**.
+  It is therefore **deliberately not published on this site** and is held back
+  from the site's assets pending clear licensing. The renders stand in for it.
+
+If you own that photograph and would like it credited or removed from the source
+repository, please open an issue.
+
+## How it's built
+
+- **[Astro](https://astro.build/)** — a static site, built to a project page on
+  GitHub Pages and served from the `/dome/` base. Two type-safe *content
+  collections* drive the comparison table and the resource directory.
+- **[Tailwind CSS](https://tailwindcss.com/)** (v4, via the Vite plugin) for a
+  warm, biophilic layout that echoes the reference photo's palette.
+- **[Blender](https://www.blender.org/)** for the renders and the `.blend`
+  design sources — the same tooling that could later re-render clean hero shots.
+- Images are optimized to responsive AVIF/WebP through `astro:assets`; the ~35 MB
+  of concept clips are served as plain files (no Git LFS, which GitHub Pages
+  does not serve).
+
+## Colophon
+
+Built with Astro + Blender. Palette: warm paper, moss, clay, and daylight.
+Source and issues live on <a href="https://github.com/crs48/dome">GitHub</a>.
+
+</div>
+
+</Layout>

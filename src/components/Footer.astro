@@ -1,0 +1,45 @@
+---
+import { NAV, withBase } from '../lib/base';
+---
+
+<footer class="mt-24 border-t border-line bg-surface">
+  <div
+    class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-start sm:justify-between"
+  >
+    <div class="max-w-sm">
+      <p class="font-display text-lg font-semibold text-moss-deep">
+        The One-Room Dome
+      </p>
+      <p class="mt-2 text-sm leading-relaxed text-muted">
+        A design study and honest resource for geodesic dome homes — cook,
+        sleep, bathe, move, and grow in a single daylit volume.
+      </p>
+    </div>
+
+    <nav class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm" aria-label="Footer">
+      {
+        NAV.map((item) => (
+          <a
+            href={withBase(item.href)}
+            class="text-muted transition-colors hover:text-moss"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <div class="border-t border-line/70">
+    <p class="mx-auto max-w-6xl px-5 py-4 text-xs text-muted">
+      Built with <a
+        class="underline underline-offset-2 hover:text-moss"
+        href="https://astro.build/">Astro</a
+      > + Blender. Renders &amp; <code>.blend</code> files © the author. AI concept
+      clips and the reference photo are used for study — see <a
+        class="underline underline-offset-2 hover:text-moss"
+        href={withBase('/about')}>About</a
+      > for provenance and licensing.
+    </p>
+  </div>
+</footer>
