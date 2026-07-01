@@ -638,11 +638,11 @@ stateDiagram-v2
 
 - [x] `npm run build` succeeds locally with no image/link errors.
 - [x] Preview the built `dist/` served under a `/dome/` base — every internal link, image, video, and poster resolves (no 404s, no missing `base` prefix).
-- [ ] The deploy workflow runs green on push to `main`; the site is live at `https://<user>.github.io/dome/`.
+- [x] The deploy workflow runs green on push to `main`; the site is live at `https://<user>.github.io/dome/`.
 - [x] All 15 concept clips play; renders load as optimized AVIF/WebP (check `srcset`); no layout shift (CLS) on the gallery.
 - [x] The `methods` table renders all 8 methods with pros/cons and the honest caveats/uncertainty flags visible.
 - [x] Every `projects` outbound link opens the correct live site (spot‑check each category); `verified` dates present.
-- [ ] README renders correctly on GitHub: hero + gallery images show, comparison table formats, all links work.
+- [x] README renders correctly on GitHub: hero + gallery images show, comparison table formats, all links work.
 - [x] `LICENSE` + `LICENSE-CONTENT` present; no third‑party media published without cleared rights.
 - [x] Lighthouse/quick perf pass: static, small JS, images lazy‑loaded, videos `preload="metadata"`.
 - [x] Mobile layout holds (the biophilic hero and gallery are responsive).
