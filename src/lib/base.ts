@@ -17,10 +17,10 @@ export interface NavItem {
 
 export const NAV: NavItem[] = [
   { href: '/', label: 'Home' },
-  { href: '/design', label: 'The Design' },
-  { href: '/methods', label: 'Build Methods' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/before-you-build', label: 'Reality check' },
-  { href: '/resources', label: 'Resources' },
+  { href: '/#room', label: 'The room' },
+  { href: '/#day', label: 'A day here' },
+  { href: '/#systems', label: 'How it works' },
+  { href: '/studies/', label: 'The studies' },
+  { href: '/archive/', label: 'Archive' },
   { href: '/about', label: 'About' },
 ];

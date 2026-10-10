@@ -1,0 +1,23 @@
+---
+import { Picture } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import { heroPhoto } from '../../lib/media';
+import { withBase } from '../../lib/base';
+const entries = [
+  { number:'01', path:'field-guide', title:'The earlier field guide', text:'The previous homepage, its purpose chooser, and the first broad introduction to dome living.' },
+  { number:'02', path:'design', title:'The first design studies', text:'The Blender sequence: a shell, a floor, a kitchen, furniture, rings, and plants.' },
+  { number:'03', path:'gallery', title:'Concept art & films', text:'The original Grok Imagine still, fifteen concept films, and the Blender renders.' },
+  { number:'04', path:'methods', title:'Building approaches', text:'Eight construction directions, their tradeoffs, and the questions behind the comparison.' },
+  { number:'05', path:'before-you-build', title:'Before you build', text:'Earlier research on comfort, water, project budgets, permissions, and evidence.' },
+  { number:'06', path:'resources', title:'The resource library', text:'Suppliers, built projects, educators, geometry tools, and further reading.' },
+  { number:'07', path:'about', title:'The earlier colophon', text:'The provenance and context of the original collection and field guide.' },
+];
+---
+<Layout title="Exploration archive" description="Earlier one-room dome explorations: the original field guide, Blender designs, concept films, construction comparisons, and resource library.">
+  <div class="habitat habitat-wrap">
+    <header class="collection-heading"><p class="eyebrow">The exploration archive</p><h1>Every idea<br/>has a before.</h1><p>The earlier sketches, films, and rabbit holes that brought this home into focus. Kept here so you can follow the thought, including the directions it has grown beyond.</p></header>
+    <div class="archive-intro"><div><h2>Where the<br/>room began.</h2><p class="study-caption">A translucent shell. Rings overhead. Plants along the windows. These early experiments asked what a dome could hold. The current study brings the everyday activities into a more coherent whole.</p><a class="line-link" href={withBase('/')}>Return to the current concept <span aria-hidden="true">↗</span></a></div>{heroPhoto && <figure class="concept-image"><Picture src={heroPhoto.image} formats={['avif','webp']} fallbackFormat="webp" widths={[360,600]} sizes="(min-width: 800px) 400px, 80vw" loading="lazy" alt="The original dome concept with overhead net, gymnastic rings, plants and a freestanding tub." style="max-height:400px;object-fit:cover;object-position:center"/><figcaption>Original concept · Grok Imagine</figcaption></figure>}</div>
+    <nav class="archive-list" aria-label="Archived explorations">{entries.map((entry) => <a href={withBase(`/archive/${entry.path}/`)}><span class="eyebrow">{entry.number}</span><h2>{entry.title}</h2><p>{entry.text}</p><span aria-hidden="true">↗</span></a>)}</nav>
+    <p class="quiet-note">Archived research reflects its stated review date. Supplier information and links can change. The original <a class="text-link" href="https://github.com/crs48/dome/tree/main/design">Blender source files</a> remain available.</p>
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import ConceptImage from './ConceptImage.astro';
+const places = [
+  { id: 'sleep', number: '01', label: 'Sleep', x: 28, y: 48, title: 'A soft place to land.', body: 'A low, ventilated bed base, linen, and somewhere to put the bedding. Leave it open for a slow morning, or roll it away when you want more room.', detail: 'A curtain can make a small refuge within the larger room.' },
+  { id: 'cook', number: '02', label: 'Cook', x: 37, y: 34, title: 'The kitchen follows the edge.', body: 'A compact counter, a place to prepare something good, and everyday things within reach. Cooking shares the room without occupying its center.', detail: 'Group services nearby, with dedicated cooking extraction.' },
+  { id: 'bathe', number: '03', label: 'Bathe', x: 71, y: 43, title: 'Let the light into the bath.', body: 'An open tub beside the garden. A shower with a curtain you can draw. A textured, drained wet zone gives water a place of its own.', detail: 'The toilet has its own enclosure. Bathing can stay open.' },
+  { id: 'move', number: '04', label: 'Move', x: 51, y: 60, title: 'Keep a little room for possibility.', body: 'Stretch out. Unroll a mat. Hang from rings on a designed support. The clear floor invites a change of pace throughout the day.', detail: 'Human suspension needs engineered supports and safe clearances.' },
+  { id: 'work', number: '05', label: 'Work', x: 26, y: 73, title: 'Meet your work at a different level.', body: 'Sit on a cushion, use a supported perch, or stand. A surface that changes height can make room for several ways of working, eating, and making.', detail: 'Comfort and variety lead. A chair is always an option.' },
+  { id: 'privacy', number: '06', label: 'Privacy', x: 52, y: 28, title: 'A proper door where it matters.', body: 'A small, opaque toilet enclosure brings privacy to an otherwise open room. Include handwashing nearby and ventilation that exhausts outdoors.', detail: 'Its ceiling is removed in this cutaway to show the compartment.' },
+];
+---
+<div class="room-explorer" data-choice-group>
+  <div class="room-map">
+    <ConceptImage concept="cutaway" caption={false} sizes="(min-width: 900px) 65vw, 94vw" />
+    <div class="room-hotspots enhancement-controls" hidden aria-label="Places in the room">
+      {places.map((place) => <button type="button" class="room-hotspot" style={`--x:${place.x}%;--y:${place.y}%`} data-choice={place.id} aria-label={`Explore ${place.label.toLowerCase()}`} aria-controls={`room-${place.id}`} aria-pressed="false">{place.number}</button>)}
+    </div>
+    <p class="image-note">Concept cutaway · select a number or an activity to explore.</p>
+  </div>
+  <div class="room-reading">
+    <div class="choice-controls room-choices enhancement-controls" hidden role="group" aria-label="Explore an activity">
+      {places.map((place) => <button type="button" data-choice={place.id} aria-controls={`room-${place.id}`} aria-pressed="false"><span>{place.number}</span>{place.label}</button>)}
+    </div>
+    <div class="choice-content" aria-live="polite" aria-atomic="true">
+      {places.map((place) => <article id={`room-${place.id}`} data-choice-panel={place.id}>
+        <p class="eyebrow">{place.number} / {place.label}</p>
+        <h3>{place.title}</h3><p>{place.body}</p><p class="quiet-note">{place.detail}</p>
+      </article>)}
+    </div>
+  </div>
+</div>

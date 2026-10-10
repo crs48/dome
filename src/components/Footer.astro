@@ -1,45 +1,7 @@
 ---
-import { NAV, withBase } from '../lib/base';
+import { withBase } from '../lib/base';
 ---
-
-<footer class="mt-24 border-t border-line bg-surface">
-  <div
-    class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-start sm:justify-between"
-  >
-    <div class="max-w-sm">
-      <p class="font-display text-lg font-semibold text-moss-deep">
-        The One-Room Dome
-      </p>
-      <p class="mt-2 text-sm leading-relaxed text-muted">
-        A design study and honest resource for geodesic dome homes — cook,
-        sleep, bathe, move, and grow in a single daylit volume.
-      </p>
-    </div>
-
-    <nav class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm" aria-label="Footer">
-      {
-        NAV.map((item) => (
-          <a
-            href={withBase(item.href)}
-            class="text-muted transition-colors hover:text-moss"
-          >
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
-  </div>
-
-  <div class="border-t border-line/70">
-    <p class="mx-auto max-w-6xl px-5 py-4 text-xs text-muted">
-      An exploration by <a href="https://crs.land/" class="underline underline-offset-2">Christopher Smothers</a>. Built with <a
-        class="underline underline-offset-2 hover:text-moss"
-        href="https://astro.build/">Astro</a
-      > + Blender. AI concept art &amp; films (Grok Imagine), renders, and
-      <code>.blend</code> files © the author, CC BY-NC 4.0 — see <a
-        class="underline underline-offset-2 hover:text-moss"
-        href={withBase('/about')}>About</a
-      > for provenance and licensing.
-    </p>
-  </div>
-</footer>
+<footer class="site-footer"><div class="habitat-wrap">
+  <div class="footer-top"><a class="footer-brand" href={withBase('/')}>one room.</a><p>A home that invites you to move.<br/>An exploration by <a href="https://crs.land/">Christopher Smothers ↗</a></p><nav aria-label="Footer"><a href={withBase('/studies/')}>The studies</a><a href={withBase('/archive/')}>Exploration archive</a><a href={withBase('/about/')}>About & image credits</a><a href="https://github.com/crs48/dome">Source ↗</a></nav></div>
+  <div class="footer-bottom"><p>A personal design study · October 2026</p><p>AI concepts & original Blender studies · Content CC BY-NC 4.0 · Code MIT</p></div>
+</div></footer>

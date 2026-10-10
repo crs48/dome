@@ -2,6 +2,9 @@
 import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/dm-sans';
 import '../styles/global.css';
+import '../styles/habitat.css';
+import { getImage } from 'astro:assets';
+import { concepts } from '../lib/concepts';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { withBase } from '../lib/base';
@@ -13,12 +16,13 @@ interface Props {
 
 const {
   title,
-  description = 'One big multifunctional room under a 5/8-sphere geodesic dome — a design study and an honest, cited resource for dome homes.',
+  description = 'A home that invites you to move. One generous dome room for floor living, daylight bathing, and an adaptable daily life.',
 } = Astro.props;
 
 const fullTitle =
-  title === 'Home' ? 'The One-Room Dome' : `${title} · The One-Room Dome`;
+  title === 'Home' ? 'The One-Room Dome — A home that invites you to move' : `${title} · The One-Room Dome`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const socialImage = await getImage({ src: concepts.timber.image, width: 1200, format: 'jpg', quality: 80 });
 ---
 
 <!doctype html>
@@ -32,6 +36,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL(socialImage.src, Astro.site).href} />
+    <meta property="og:image:alt" content={concepts.timber.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
       href={withBase('/favicon.svg')}

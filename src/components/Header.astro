@@ -1,41 +1,17 @@
 ---
-import { NAV, withBase } from '../lib/base';
-
-const path = Astro.url.pathname.replace(/\/$/, '');
-function isActive(href: string): boolean {
-  const target = withBase(href).replace(/\/$/, '');
-  if (href === '/') return path === target || path === withBase('/').replace(/\/$/, '');
-  return path === target || path.startsWith(target + '/');
-}
+import { withBase } from '../lib/base';
+const isArchive = Astro.url.pathname.includes('/archive');
+const isStudies = Astro.url.pathname.includes('/studies');
 ---
-
-<header class="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur">
-  <nav
-    class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-5 py-3"
-    aria-label="Primary"
-  >
-    <a
-      href={withBase('/')}
-      class="mr-auto flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-moss-deep"
-    >
-      <span aria-hidden="true" class="text-clay">◉</span>
-      The&nbsp;One-Room&nbsp;Dome
-    </a>
-    {
-      NAV.filter((i) => i.href !== '/').map((item) => (
-        <a
-          href={withBase(item.href)}
-          aria-current={isActive(item.href) ? 'page' : undefined}
-          class:list={[
-            'text-sm transition-colors hover:text-moss',
-            isActive(item.href)
-              ? 'font-semibold text-moss underline underline-offset-4'
-              : 'text-muted',
-          ]}
-        >
-          {item.label}
-        </a>
-      ))
-    }
-  </nav>
+<header class="site-header">
+  <div class="habitat-wrap masthead">
+    <a class="site-brand" href={withBase('/')} aria-label="The One-Room Dome home"><span class="brand-mark" aria-hidden="true">△</span><span>one room.<small>THE DOME HOME STUDY</small></span></a>
+    <nav aria-label="Primary">
+      <a href={withBase('/#room')}>The room</a>
+      <a href={withBase('/#day')}>A day here</a>
+      <a href={withBase('/#systems')}>How it works</a>
+      <a href={withBase('/studies/')} aria-current={isStudies ? 'page' : undefined}>The studies</a>
+      <a class="archive-nav-link" href={withBase('/archive/')} aria-current={isArchive ? 'page' : undefined}>Archive <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
 </header>

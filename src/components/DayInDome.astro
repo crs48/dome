@@ -1,0 +1,24 @@
+---
+import ConceptImage from './ConceptImage.astro';
+import type { ConceptKey } from '../lib/concepts';
+const moments: { id: string; label: string; time: string; title: string; body: string; image: ConceptKey }[] = [
+  { id: 'wake', label: 'Wake', time: 'A slow beginning', title: 'Let the day arrive.', body: 'Light crosses the floor. Put the kettle on, open the bedding, and take a moment before the day asks anything of you.', image: 'timber' },
+  { id: 'work', label: 'Work', time: 'Find your own rhythm', title: 'Change your point of view.', body: 'A cushion, a perch, a standing surface. Make changing position an ordinary part of working. The desk can become a table when work is done.', image: 'work' },
+  { id: 'move', label: 'Move', time: 'A little space between things', title: 'The room is ready when you are.', body: 'An open floor makes a short stretch easy. A mat and designed ring support make space for a longer practice. Everyday movement has a place here.', image: 'attachments' },
+  { id: 'bathe', label: 'Bathe', time: 'Time to come back to yourself', title: 'Stay in the light.', body: 'A shower after moving. A bath beside the garden. Draw a curtain for a quieter moment, then let the room open up again.', image: 'bathing' },
+  { id: 'gather', label: 'Gather', time: 'Make a little room', title: 'Bring the conversation closer.', body: 'Set a low table, pull over a few cushions, and share something to eat. For the larger gathering, there is a world beyond your door.', image: 'evening' },
+  { id: 'rest', label: 'Rest', time: 'An unhurried ending', title: 'Let the room become a refuge.', body: 'Put things away. Soften the light. Draw the sleeping curtain. The same space that held the day can help you settle into the evening.', image: 'evening' },
+];
+---
+<div class="day-explorer" data-choice-group>
+  <div class="day-controls choice-controls enhancement-controls" hidden role="group" aria-label="Choose a moment in the day">
+    {moments.map((moment, index) => <button type="button" data-choice={moment.id} aria-pressed="false" aria-controls={`day-${moment.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{moment.label}</button>)}
+  </div>
+  <div class="day-panels" aria-live="polite" aria-atomic="true">
+    {moments.map((moment) => <article class="day-panel" id={`day-${moment.id}`} data-choice-panel={moment.id}>
+      <ConceptImage concept={moment.image} caption={false} sizes="(min-width: 900px) 66vw, 94vw" />
+      <div class="day-copy"><p class="eyebrow">{moment.time}</p><h3>{moment.title}</h3><p>{moment.body}</p><p class="quiet-note">One possible rhythm. Make it your own.</p></div>
+    </article>)}
+  </div>
+  <p class="image-note">Independent AI concept studies explore the same idea; layouts vary between scenes.</p>
+</div>

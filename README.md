@@ -1,163 +1,104 @@
-<div align="center">
+# The One-Room Dome
 
-# 🏠 The One-Room Dome
+## A home that invites you to move
 
-### One big multifunctional room under a 5/8-sphere geodesic shell.
+One generous room for sleeping close to the ground, working in several postures,
+bathing in daylight, cooking, moving, and spending time together. A private
+toilet enclosure brings a door where it matters; daily life shares the light.
 
-Cook, sleep, bathe, move, and grow plants in a single daylit volume — a design
-study, and an honest, cited resource for anyone thinking about building a dome.
+[Explore the site](https://crs48.github.io/dome/) ·
+[The ten studies](https://crs48.github.io/dome/studies/) ·
+[Earlier explorations](https://crs48.github.io/dome/archive/)
 
-**[🌐 Live site → crs48.github.io/dome](https://crs48.github.io/dome/)**
+![Timber dome with an open movement floor, low bed, kitchen, private toilet and daylight bathing](src/assets/concepts/2026-10-human-habitat/01-timber-human-habitat.png)
 
-<img src="src/assets/photos/imagine-cbd1317c.jpg" alt="The one-room dome interior: rope net loft, gymnastic rings, freestanding tub, plants, and wall bars" width="440">
+*AI-generated design study, October 2026. A concept, not a photograph or building plan.*
 
-<sub><i>AI-generated concept (Grok Imagine) — the whole one-room idea in a single frame.</i></sub>
+## The primary story
 
-</div>
+The site follows the human habitat proposal through a continuous visual tour:
 
----
+1. **The room** — explore sleeping, cooking, bathing, movement, work, and privacy.
+2. **A day here** — choose a moment from waking to rest.
+3. **Daylight bathing** — an open tub and curtained shower beside a private toilet.
+4. **How it could work** — compare shell materials, floor systems, and attachments.
+5. **Beyond the door** — connect a private home to gardens and shared spaces.
 
-## The idea
+The selectors enhance server-rendered content. Without JavaScript, every story
+remains readable. There is no autoplay, account, or saved interaction state.
 
-No hallways, no spare rooms. A dome collapses a house into a single volume, and
-every function shares the same light:
+```mermaid
+flowchart LR
+  Home[Human habitat story] --> Room[Room explorer]
+  Room --> Day[A day in the dome]
+  Day --> Bath[Bathing and privacy]
+  Bath --> Systems[Shell, floor and fixtures]
+  Systems --> Commons[Shared landscape]
+  Home --> Studies[Ten concept studies]
+  Home --> Archive[Earlier explorations]
+```
 
-| | |
+## The archive
+
+The original field guide, Blender design timeline, Grok Imagine art and fifteen
+films, eight construction comparisons, before-building guide, resource directory,
+and earlier colophon are preserved under `/archive/`. They have their own archive
+navigation and a visible context banner.
+
+The old `/design`, `/gallery`, `/methods`, `/before-you-build`, and `/resources`
+URLs redirect into the archive. Browser redirects preserve query strings and
+fragment links. `/about/` now explains the current collection and all image credits.
+
+## Development
+
+The site uses Astro 5, MDX, Tailwind CSS v4, and local responsive image processing.
+It remains a static GitHub Pages project served under `/dome/`.
+
+```sh
+npm install
+npm run dev       # development preview
+npm run build     # Astro type checks and static build
+npm run preview   # production preview
+npm run posters   # regenerate legacy film posters; requires ffmpeg
+```
+
+Every push to `main` runs the existing GitHub Pages deployment workflow. Keep
+hand-written internal links and public asset paths behind `withBase()` from
+`src/lib/base.ts`; Astro prefixes imported image assets automatically.
+
+## Project map
+
+| Path | Purpose |
 |---|---|
-| **⬡ Shell** | 5/8-sphere geodesic, translucent panels, a central oculus skylight |
-| **⚭ Move** | Gymnastic rings, a climbing-net loft, wall bars, open floor |
-| **❦ Nourish** | A perimeter kitchen and plants along the glazed band |
-| **☾ Rest** | Floor cushions and a round, softly sunken bed |
-| **≋ Bathe** | A freestanding tub, out in the daylight |
-| **☀ Light** | Biophilic daylight from every angle |
+| `src/pages/index.astro` | Main human habitat narrative |
+| `src/pages/studies.astro` | All ten concepts and their design notes |
+| `src/pages/archive/` | Earlier pages and the archive index |
+| `src/pages/[legacy].astro` | Compatibility redirects |
+| `src/lib/concepts.ts` | Typed image collection and captions |
+| `src/components/ConceptImage.astro` | Responsive AVIF/WebP images |
+| `src/components/RoomExplorer.astro` | Activity selector and cutaway |
+| `src/components/DayInDome.astro` | Day-cycle narrative |
+| `src/components/MaterialStudy.astro` | Timber and mineral alternatives |
+| `src/scripts/choices.ts` | Shared progressive enhancement |
+| `src/styles/habitat.css` | Current editorial design |
+| `src/assets/concepts/2026-10-human-habitat/` | Original PNGs and complete prompt provenance |
+| `src/assets/photos/`, `src/assets/renders/`, `public/videos/` | Preserved earlier media |
+| `design/` | Original Blender source models |
 
-## Concept art & films
+## Design and verification records
 
-The vibe lives in the AI-generated concept art and films — 15 "dollhouse"
-cutaways and slow interior fly-throughs, all made with **Grok Imagine**. They're
-the high-fidelity look at the one-room dome. **Click a frame to watch on the
-live site:**
+- [Illustrated proposal and lookbook](docs/explorations/0002_%5B_%5D_HUMAN_HABITAT_CONCEPTS_AND_WEBSITE_PROPOSAL.md)
+- [Rebuild checklist and release record](docs/HABITAT-REBUILD.md)
+- [Image prompts, revision provenance and checksums](src/assets/concepts/2026-10-human-habitat/manifest.json)
+- [Earlier field-guide refresh](docs/REFRESH.md)
 
-<div align="center">
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/342cfa18-2294-4dc2-85a2-f21e58017bfc.jpg" alt="Concept film — isometric cutaway" width="220"></a>
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/59f04b2d-63b1-4ea4-8aa1-14c82a2a741d.jpg" alt="Concept film — interior fly-through" width="220"></a>
-<a href="https://crs48.github.io/dome/gallery"><img src="public/videos/posters/e6b540f9-7b7a-4dd2-87c2-d0172a804181.jpg" alt="Concept film — interior fly-through" width="220"></a>
-</div>
+## Image provenance and licensing
 
-<sub>GitHub READMEs don't autoplay relative-path video, so these are poster
-frames linking to the <a href="https://crs48.github.io/dome/gallery">live
-gallery</a>, where all 15 films play.</sub>
+The ten current studies were generated with OpenAI’s built-in image generation
+tool. They are independent design variations, not coordinated views of one
+measured model. The mineral shell and attachment details do not depict certified
+manufacturer products. The archive retains the original Grok Imagine still and
+films, alongside the author’s Blender studies.
 
-## The 3D studies
-
-Alongside the films, the design was blocked out in Blender one layer at a time —
-a bare shell, then a floor, a kitchen, furniture, rings, and plants. Rough,
-low-fi work-in-progress, shown honestly:
-
-<div align="center">
-<img src="src/assets/renders/dome_render.png" alt="Bare translucent geodesic shell" width="270">
-<img src="src/assets/renders/dome_with_kitchen.png" alt="Perimeter kitchen" width="270">
-<img src="src/assets/renders/dome_with_rings.png" alt="Gymnastic rings from the apex" width="270">
-</div>
-
-## Build methods — the honest comparison
-
-Plenty of sites *sell* domes; few compare them honestly. Full per-method
-pros/cons, uncertainty flags, and sources live on the
-[Build Methods](https://crs48.github.io/dome/methods) page.
-
-| Method | Cost | Insulation | DIY | Light | Best use |
-|---|---|---|---|---|---|
-| **Aircrete** (Domegaia) | ~$1–2/sq-ft·in (material) | ~R-2/in realistic (marketed ~R-6 disputed) | High | Opaque | Cheap DIY off-grid shell, dry climate |
-| **Shotcrete / Monolithic** | ~$130–250/sq ft | ~R-30–60 + mass | Low | Opaque | Max disaster resistance, long life |
-| **Timber geodesic** | ~$120 (DIY) – $350/sq ft | High (R-30+); no mass | High | Opaque + skylights | DIY warm insulated home |
-| **Polycarbonate geodesic** | Kit ~$3k–30k | ~R-2.8 (5-wall); poor | High | **Translucent** | Greenhouse, sunroom, glamping |
-| **Glass geodesic** | Kit ~$4k–20k+ | Worst (~R-3–8) | Low | **Transparent** | Views, glamping, sunroom |
-| **Binishell** (air-formed) | Shell $10–30/sq ft (prototypes) | Mass; needs insulation | No | Opaque | Rapid concrete shells (w/ engineering) |
-| **Bioceramic** (Geoship) | GTM ~$90k–380k | Vendor claim (unverified) | No | Opaque (luminous) | Health/eco early-adopter kit |
-| **Earthbag / SuperAdobe** (CalEarth) | Cheapest materials; labor-heavy | Low (mass ≠ insulation) | Highest | Opaque | Ultra-low-cost DIY, desert climates |
-
-**Four honest caveats about dome living:** ① leaks are the defining dome problem
-(seams, hubs, no drainage plane); ② sealed high-gain shells sweat without
-ventilation; ③ curved walls are hard to furnish (expect built-ins); ④ resale,
-financing, insurance, and code all take extra work.
-
-## Resource directory
-
-A curated, live-verified (July 2026) directory out to the best dome projects on
-the internet — the full annotated version is on the
-[Resources](https://crs48.github.io/dome/resources) page.
-
-- **Bioceramic / next-gen:** [Geoship](https://geoship.is/)
-- **Aircrete:** [Domegaia](https://domegaia.com/) · [Aircrete Harry](https://aircreteharry.com/) · [Steve Areen's dome](https://steveareen.com/domehome/)
-- **Geodesic kits:** [Pacific Domes](https://pacificdomes.com/) · [Natural Spaces Domes](https://naturalspacesdomes.com/) · [Timberline Geodesics](https://www.domehome.com/) · [Ekodome](https://ekodome.com/) · [Growing Spaces](https://growingspaces.com/) · [Biodomes](https://biodomes.org/) · [FDomes](https://fdomes.com/) · [Intershelter](https://intershelter.com/)
-- **Monolithic / concrete:** [Monolithic Dome Institute](https://www.monolithic.org/) · [Binishells](https://binishells.com/)
-- **Earthbag:** [CalEarth](https://calearth.org/)
-- **Fuller & theory:** [Buckminster Fuller Institute](https://www.bfi.org/) · [Montreal Biosphère](https://www.parcjeandrapeau.com/en/biosphere-environment-museum-montreal/) · [Eden Project](https://www.edenproject.com/)
-- **Inspiration:** [Hjertefølger Nature House](https://mymodernmet.com/hjertefolger-arctic-circle-cob-house/) · [Domerama](http://www.domerama.com/)
-- **Geometry / software:** [Desert Domes calculator](https://www.desertdomes.com/domecalc.html) · [Acidome calculator](https://acidome.com/lab/calc/) · [Blender Geodesic Domes add-on](https://extensions.blender.org/add-ons/geodesic-domes/) · [Zip Tie Domes](https://www.ziptiedomes.com/)
-
-## Build & deploy
-
-This is a static [Astro](https://astro.build/) 5 site styled with
-[Tailwind CSS](https://tailwindcss.com/) v4.
-
-```bash
-npm install          # install dependencies
-npm run dev          # local dev server
-npm run build        # type-check + static build to dist/
-npm run preview      # preview the built dist/ under the /dome/ base
-npm run posters      # regenerate video poster frames (needs ffmpeg)
-```
-
-Every push to `main` is built and published to **GitHub Pages** by
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
-(`withastro/action` → `actions/deploy-pages`). Because it's a project page
-served from `/dome/`, `astro.config.mjs` sets `base: '/dome'`, and hand-written
-links and `public/` assets are routed through `import.meta.env.BASE_URL`.
-
-### Repository layout
-
-```
-├── .github/workflows/deploy.yml   # GitHub Pages CI
-├── astro.config.mjs               # site + base:/dome + responsive images
-├── public/videos/                 # 15 AI concept films (+ posters/)
-├── src/
-│   ├── assets/photos/             # AI concept stills (Grok Imagine) → <Picture>
-│   ├── assets/renders/            # Blender 3D-study PNGs → <Image>/<Picture>
-│   ├── content/                   # methods.yaml + projects.yaml (content collections)
-│   ├── components/ · layouts/ · pages/
-│   └── lib/                       # base-URL helper + media manifest
-├── design/                        # .blend source files (downloadable)
-└── docs/explorations/             # the exploration that specced this site
-```
-
-## License & attribution
-
-- **Code** — MIT (see [`LICENSE`](LICENSE)).
-- **All media & prose** — the author's own work, CC BY-NC 4.0 (see
-  [`LICENSE-CONTENT`](LICENSE-CONTENT)). This covers the AI concept art & films
-  (`src/assets/photos/`, `public/videos/`) made with Grok Imagine, the Blender
-  renders (`src/assets/renders/`) and `.blend` sources (`design/`), and the
-  written prose.
-
-<div align="center"><sub>Built with Astro + Blender · warm paper, moss, clay, and daylight.</sub></div>
-
-## October 2026 field-guide refresh
-
-The site now includes a purpose chooser, an illustrated welcome, and a [before-you-build guide](https://crs48.github.io/dome/before-you-build/) covering comfort, complete budgets and evidence questions. The eight construction approaches use scoped qualitative comparisons instead of mixing shell prices with finished homes. Original concept art, films, Blender studies and routes remain. See [the research and verification log](docs/REFRESH.md).
-
-## Human habitat concept studies
-
-Ten new AI-generated studies explore floor living, daylight bathing with a private
-toilet, timber and mineral shells, structural attachment concepts, concrete floor
-services, adjustable work surfaces, and shared gardens.
-
-- [Read the illustrated lookbook and website proposal](docs/explorations/0002_%5B_%5D_HUMAN_HABITAT_CONCEPTS_AND_WEBSITE_PROPOSAL.md).
-- [Browse the original images](src/assets/concepts/2026-10-human-habitat/).
-- [Read the complete prompts and provenance](src/assets/concepts/2026-10-human-habitat/manifest.json).
-
-These October 2026 images use the built-in image generation tool. They are
-independent design concepts, not measured plans, engineering details, or actual
-manufacturer products. The website changes described in the proposal are future
-work; the published pages have not been updated with this collection.
+**Code:** [MIT](LICENSE). **Media and prose:** [CC BY-NC 4.0](LICENSE-CONTENT).
+An exploration by [Christopher Smothers](https://crs.land/).

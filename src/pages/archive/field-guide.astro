@@ -1,0 +1,59 @@
+---
+import { Image, Picture } from 'astro:assets';
+import Layout from '../../layouts/ArchiveLayout.astro';
+import DomeSketch from '../../components/DomeSketch.astro';
+import PurposeChooser from '../../components/PurposeChooser.astro';
+import { withBase } from '../../lib/base';
+import { heroPhoto, iterationStory, featuredClip, posterFor } from '../../lib/media';
+const rooms = [
+  ['01 / MAKE', 'Dinner, with a view.', 'A kitchen around the edge. The center stays open for whatever happens next.'],
+  ['02 / MOVE', 'Room to be a mammal.', 'Rings, stretching, floor lounging. The idea is space to use, not space to fill.'],
+  ['03 / GROW', 'A few leafy roommates.', 'Plants where the light lands. With a plan for shading, water and humidity.'],
+  ['04 / REST', 'A softer landing.', 'Cushions, a bed, a good book. And yes, a real conversation about privacy.'],
+];
+---
+<Layout title="Home" description="A curious field guide to dome homes. Explore a one-room design, play with the possibilities, and get honest about the practical bits.">
+  <div class="dome-home">
+    <section class="dome-hero">
+      <div>
+        <p class="section-kicker">A field guide to living a little rounder</p>
+        <h1>Life can be<br/>less <em>rectangular.</em></h1>
+        <p class="intro">What if home were one big, light-filled room? A place to cook, climb, grow things, and put your feet up. Welcome to the pleasantly impractical dream—and the practical questions that might make it work.</p>
+        <div class="hero-actions"><a class="dome-button primary" href="#possibilities">Find your dome daydream ↗</a><a class="dome-button" href={withBase('/archive/design')}>Step inside the idea</a></div>
+        <p class="small-note">A personal design exploration by Christopher Smothers.<br/>Curiosity encouraged. Building plans not included.</p>
+      </div>
+      <figure class="hero-art"><DomeSketch/><figcaption class="art-caption">One roof. Many possibilities. A very suspicious shortage of corners.</figcaption></figure>
+    </section>
+    <div class="dome-ribbon"><span>△ Original design studies</span><span>◌ Eight building approaches</span><span>↗ Sources you can follow</span></div>
+    <section class="home-section room-spread">
+      <figure class="room-photo">
+        {heroPhoto && <Picture src={heroPhoto.image} formats={['avif','webp']} alt={heroPhoto.caption} sizes="(min-width: 760px) 440px, 90vw" loading="lazy" />}
+        <figcaption>AI-generated concept by the author (Grok Imagine). An atmosphere to explore, not a photograph of a finished home.</figcaption>
+      </figure>
+      <div><p class="section-kicker">The one-room experiment</p><h2>A home with room<br/>to change its mind.</h2><p class="text-muted leading-relaxed">The idea is a 5/8-sphere geodesic shell: triangles making a curve, with daily life sharing the space underneath. It’s an invitation to rethink the floor plan.</p>
+        <div class="room-list">{rooms.map(([number,title,body])=><article><span class="section-kicker">{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
+        <p class="mt-6"><a class="text-link" href={withBase('/archive/design')}>Follow the design, layer by layer ↗</a></p>
+      </div>
+    </section>
+    <div id="possibilities"><PurposeChooser/></div>
+    <section class="home-section">
+      <p class="section-kicker">Keep the wonder. Bring a notebook.</p><h2>The bits the beautiful<br/>render forgot to mention.</h2>
+      <div class="reality-grid">
+        <article><span class="section-kicker">01 / COMFORT</span><h3>You are not a tomato.</h3><p>All that glazing feels lovely in a picture. A home also needs shade, insulation and a moisture plan. A greenhouse and a living room ask different things of a shell.</p></article>
+        <article><span class="section-kicker">02 / BUDGET</span><h3>A shell is not a house.</h3><p>Foundations, utilities, labour, interiors, permits, site work. The little asterisk after a kit price can contain most of a building project.</p></article>
+        <article><span class="section-kicker">03 / EVERYDAY LIFE</span><h3>Love the room.<br/>Test a Tuesday.</h3><p>Someone is cooking. Someone is on a call. Someone would like a door. Openness is a design choice with tradeoffs, not an automatic upgrade.</p></article>
+      </div>
+      <a class="dome-button primary" href={withBase('/archive/before-you-build')}>The friendly reality check ↗</a>
+    </section>
+  </div>
+  <section class="film-section"><div class="dome-home film-grid">
+    <div><p class="section-kicker">The imagination department</p><h2>A little dome cinema.</h2><p>Walk through the idea in AI-generated concept films, then peek behind the scenes at the original Blender studies. The pictures are for asking “what if?” The engineering comes later.</p><a class="text-link" href={withBase('/archive/gallery')}>Explore all 15 films &amp; the gallery ↗</a></div>
+    <figure><video controls muted playsinline preload="none" poster={withBase(posterFor(featuredClip.file))} aria-label="AI-generated one-room dome concept film"><source src={withBase(`/videos/${featuredClip.file}`)} type="video/mp4"/></video><figcaption class="small-note mt-3" style="color:#dddccb">AI-generated concept film · Grok Imagine · silent visual study</figcaption></figure>
+  </div></section>
+  <div class="dome-home home-section">
+    <p class="section-kicker">From sketch to questions</p><h2>Every good daydream has drafts.</h2>
+    <p>These are the rough 3D studies where the room began. The experiments are part of the story.</p>
+    <ul class="mt-8 grid gap-5 sm:grid-cols-3">{iterationStory.slice(0,3).map(r=><li class="overflow-hidden rounded-panel border border-line bg-surface"><Image src={r.image} alt={r.caption} sizes="(min-width: 640px) 33vw, 100vw" loading="lazy" class="aspect-[16/10] w-full object-cover"/><p class="px-4 py-3 text-sm text-muted">{r.caption}</p></li>)}</ul>
+    <div class="hero-actions"><a class="dome-button primary" href={withBase('/archive/methods')}>Compare the eight approaches</a><a class="dome-button" href={withBase('/archive/resources')}>Wander the resource library ↗</a></div>
+  </div>
+</Layout>

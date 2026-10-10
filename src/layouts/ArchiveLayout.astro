@@ -1,0 +1,19 @@
+---
+import Layout from './Layout.astro';
+import { withBase } from '../lib/base';
+interface Props { title: string; description?: string }
+const { title, description } = Astro.props;
+const links = [
+  ['field-guide', 'Field guide'], ['design', 'First designs'], ['gallery', 'Art & films'],
+  ['methods', 'Building approaches'], ['before-you-build', 'Before building'], ['resources', 'Resources'],
+];
+---
+<Layout title={`${title} · Archive`} description={description}>
+  <aside class="archive-banner">
+    <div class="habitat-wrap">
+      <p><a href={withBase('/archive/')}>← Exploration archive</a><span>Earlier ideas, preserved in context.</span></p>
+      <nav aria-label="Archive">{links.map(([slug, label]) => <a href={withBase(`/archive/${slug}/`)} aria-current={Astro.url.pathname.replace(/\/$/, '').endsWith(`/${slug}`) ? 'page' : undefined}>{label}</a>)}</nav>
+    </div>
+  </aside>
+  <div class="archive-content"><slot /></div>
+</Layout>

@@ -3,15 +3,15 @@ title: The Design
 description: The story of the one-room dome — a single daylit volume under a 5/8-sphere geodesic shell, built up step by step in Blender.
 ---
 
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/ArchiveLayout.astro';
 import { Image, Picture } from 'astro:assets';
-import { withBase } from '../lib/base';
-import { heroPhoto } from '../lib/media';
-import bare from '../assets/renders/dome_render.png';
-import kitchen from '../assets/renders/dome_with_kitchen.png';
-import rings from '../assets/renders/dome_with_rings.png';
-import plants from '../assets/renders/dome_with_real_plants.png';
-import geometry from '../assets/renders/dome_5_8_sphere_correct.png';
+import { withBase } from '../../lib/base';
+import { heroPhoto } from '../../lib/media';
+import bare from '../../assets/renders/dome_render.png';
+import kitchen from '../../assets/renders/dome_with_kitchen.png';
+import rings from '../../assets/renders/dome_with_rings.png';
+import plants from '../../assets/renders/dome_with_real_plants.png';
+import geometry from '../../assets/renders/dome_5_8_sphere_correct.png';
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
 
@@ -86,13 +86,13 @@ An open plan makes activities visible to each other. It also shares their sound,
 
 The glazed shell is a visual exploration rather than a settled envelope design. More daylight can also mean more heat gain and heat loss. An insulated shell with carefully placed windows may serve a year-round home better than the luminous dream pictured here.
 
-Before taking the drawings literally, read the <a href={withBase('/before-you-build')}>friendly reality check</a>.
+Before taking the drawings literally, read the <a href={withBase('/archive/before-you-build')}>friendly reality check</a>.
 
 ## Concept clips
 
 Alongside the renders, a set of AI-generated "dollhouse" cutaways explore the
 same idea — isometric slices and slow interior fly-throughs of biophilic dome
-rooms. They're studies, not photographs (see <a href={withBase('/about')}>About</a> for provenance).
+rooms. They're studies, not photographs (see <a href={withBase('/archive/about')}>About</a> for provenance).
 
 <video
   controls
@@ -104,8 +104,8 @@ rooms. They're studies, not photographs (see <a href={withBase('/about')}>About<
   <source src={withBase('/videos/342cfa18-2294-4dc2-85a2-f21e58017bfc.mp4')} type="video/mp4" />
 </video>
 
-See the rest in the <a href={withBase('/gallery')}>full gallery</a>, or weigh how
-you'd actually build one on <a href={withBase('/methods')}>Build Methods</a>.
+See the rest in the <a href={withBase('/archive/gallery')}>full gallery</a>, or weigh how
+you'd actually build one on <a href={withBase('/archive/methods')}>Build Methods</a>.
 
 </div>
 

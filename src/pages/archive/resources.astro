@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Layout from '../../layouts/ArchiveLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
 
 type Category = CollectionEntry<'projects'>['data']['category'];
 

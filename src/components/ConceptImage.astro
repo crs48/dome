@@ -1,0 +1,17 @@
+---
+import { Picture } from 'astro:assets';
+import { concepts, conceptCredit, type ConceptKey } from '../lib/concepts';
+interface Props {
+  concept: ConceptKey;
+  sizes?: string;
+  eager?: boolean;
+  caption?: boolean;
+  class?: string;
+}
+const { concept, sizes = '(min-width: 1280px) 1200px, 94vw', eager = false, caption = true, class: className } = Astro.props;
+const study = concepts[concept];
+---
+<figure class:list={['concept-image', className]}>
+  <Picture src={study.image} formats={['avif', 'webp']} fallbackFormat="webp" widths={[480, 768, 1200, 1536]} sizes={sizes} quality={80} alt={study.alt} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} />
+  {caption && <figcaption><span>{study.caption}</span><span>{conceptCredit}</span></figcaption>}
+</figure>

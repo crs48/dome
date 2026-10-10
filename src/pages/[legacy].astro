@@ -1,0 +1,25 @@
+---
+import { withBase } from '../lib/base';
+export function getStaticPaths() {
+  return ['design', 'gallery', 'methods', 'resources', 'before-you-build'].map((legacy) => ({ params: { legacy } }));
+}
+const destination = withBase(`/archive/${Astro.params.legacy}/`);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={new URL(destination, Astro.site).href} />
+    <title>This study has moved · The One-Room Dome</title>
+  </head>
+  <body>
+    <h1>This study is now in the archive.</h1>
+    <p><a href={destination}>Continue to the earlier exploration.</a></p>
+    <script is:inline define:vars={{ destination }}>
+      window.location.replace(destination + window.location.search + window.location.hash);
+    </script>
+  </body>
+</html>
