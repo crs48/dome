@@ -6,10 +6,10 @@ The existing project has valuable original Blender studies, clearly labeled AI c
 
 - [x] Inspect the current published code and preserve the older local branch in a separate worktree.
 - [x] Review primary building-science, code-evaluation and vendor documentation.
-- [ ] Add a warmer illustrated visual system and useful purpose chooser.
-- [ ] Replace unsupported cost, insulation, lifespan and disaster-proof comparisons.
-- [ ] Expand the design tradeoffs and add a practical before-building guide.
-- [ ] Check type safety, static routes, desktop/mobile layout and interactions.
+- [x] Add a warmer illustrated visual system and useful purpose chooser.
+- [x] Replace unsupported cost, insulation, lifespan and disaster-proof comparisons.
+- [x] Expand the design tradeoffs and add a practical before-building guide.
+- [x] Check type safety, static routes, desktop/mobile layout and interactions.
 - [ ] Publish and verify the live Pages deployment.
 
 ```mermaid
@@ -33,3 +33,13 @@ Primary references reviewed on 2026-10-10:
 - [Natural Spaces pricing catalogue](https://naturalspacesdomes.com/dome-system/pricing-and-planning/): shell, framing, foundations and interior finishing are separate scopes.
 
 Vendor links describe systems and are not independent validation or endorsements. The old directory's “verified” badges referred to link checks, not technical verification; remove that ambiguous quality signal. Existing license terms and image provenance remain intact.
+
+## Verification
+
+- `npm run build`: 0 Astro errors, warnings or hints; all 7 static routes built.
+- Generated-HTML audit: 216 internal links/assets/anchors checked, one H1 per page and no duplicate IDs.
+- Desktop and 390px browser review: homepage, comparison table and long guide remain readable; no horizontal page overflow.
+- All three purpose choices work; keyboard Enter activates the selected note. Native claim disclosures expand. All notes remain in the initial HTML for no-JavaScript reading.
+- The featured film requires an explicit play action, respecting visitors who prefer less motion and avoiding automatic video downloads.
+- Original six routes, 15 concept films, source Blender assets and original licensing retained. Added self-hosted font license notices.
+- Existing Astro 5 toolchain has npm advisories; this static-content refresh does not enable a runtime server or process visitor inputs. A framework major-version migration is separate work.

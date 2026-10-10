@@ -9,14 +9,14 @@
   blurb: "Startup building luminous, non-combustible bioceramic dome kits. Bold vision; pre-mainstream, so treat performance and pricing as vendor claims."
   verified: true
   verifiedDate: "2026-07"
-  tags: [bioceramic, prefab, fireproof]
+  tags: [bioceramic, prefab, emerging]
 
 # ── Aircrete ─────────────────────────────────────────────────────────────
 - id: domegaia
   title: Domegaia
   url: "https://domegaia.com/"
   category: aircrete
-  blurb: "Hajjar Gibran's aircrete company and its 'Little Dragon' foam generator — the reference for cheap, DIY foamed-cement dome shells. Workshops and plans."
+  blurb: "Hajjar Gibran's aircrete company and its 'Little Dragon' foam generator — a resource for DIY foamed-cement dome systems. Workshops and plans."
   verified: true
   verifiedDate: "2026-07"
   tags: [aircrete, diy, workshops]
@@ -34,7 +34,7 @@
   title: Steve Areen's Thailand Dome Home
   url: "https://steveareen.com/domehome/"
   category: aircrete
-  blurb: "The famous ~$9k owner-built dome home in Thailand — the story that launched a thousand aircrete dreams."
+  blurb: "A personal account of an owner-built dome in Thailand. Historical self-reported costs are not a current budget for a different site or specification."
   verified: true
   verifiedDate: "2026-07"
   tags: [inspiration, low-cost, story]
@@ -117,7 +117,7 @@
   title: Monolithic Dome Institute
   url: "https://www.monolithic.org/"
   category: monolithic
-  blurb: "The definitive resource on airform + shotcrete monolithic domes — construction, FEMA-grade disaster resistance, cost, and case studies."
+  blurb: "The definitive resource on airform + shotcrete monolithic domes — construction methods and case studies. Hazard performance must be established for the particular design."
   verified: true
   verifiedDate: "2026-07"
   tags: [shotcrete, disaster-resistant, reference]
@@ -126,7 +126,7 @@
   title: Binishells
   url: "https://binishells.com/"
   category: monolithic
-  blurb: "Air-inflated concrete shell technology (Bini system). Fast to raise — but read the documented failure history and engineer accordingly."
+  blurb: "Air-inflated concrete shell technology (Bini system). Explore the proposed system and ask for completed examples and site-specific engineering."
   verified: true
   verifiedDate: "2026-07"
   tags: [concrete, air-formed, engineering]
@@ -136,7 +136,7 @@
   title: CalEarth
   url: "https://calearth.org/"
   category: earthbag
-  blurb: "Nader Khalili's institute for SuperAdobe (earthbag) domes — training, plans, and the ICC-ES evaluation that eases permitting."
+  blurb: "Nader Khalili's institute for SuperAdobe (earthbag) domes — training, plans, and resources explaining the scope and conditions of its SuperAdobe evaluation."
   verified: true
   verifiedDate: "2026-07"
   tags: [earthbag, superadobe, training]
@@ -146,7 +146,7 @@
   title: Buckminster Fuller Institute
   url: "https://www.bfi.org/"
   category: theory
-  blurb: "Keeper of Fuller's legacy — the origin of the geodesic dome and its synergetic geometry. Deep archive and design-science resources."
+  blurb: "Keeper of Fuller's legacy — Fuller’s work popularizing geodesic domes and his synergetic geometry. Deep archive and design-science resources."
   verified: true
   verifiedDate: "2026-07"
   tags: [history, geometry, fuller]
@@ -174,7 +174,7 @@
   title: Hjertefølger Nature House
   url: "https://mymodernmet.com/hjertefolger-arctic-circle-cob-house/"
   category: inspiration
-  blurb: "A cob house built inside a glass dome above the Arctic Circle — the closest verified cousin to the warm, biophilic one-room dome dream."
+  blurb: "A cob house built inside a glass dome above the Arctic Circle — an inspiration with a crucial distinction: the living spaces are inside a separate inner house."
   verified: true
   verifiedDate: "2026-07"
   tags: [biophilic, glass-dome, story]

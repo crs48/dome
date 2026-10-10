@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, url, blurb, verified, verifiedDate, tags } = project.data;
+const { title, url, blurb, tags } = project.data;
 let host = url;
 try {
   host = new URL(url).host.replace(/^www\./, '');
@@ -42,16 +42,6 @@ try {
         </span>
       ))
     }
-    {
-      verified && (
-        <span
-          class="ml-auto inline-flex items-center gap-1 text-moss"
-          title={verifiedDate ? `Verified ${verifiedDate}` : 'Verified'}
-        >
-          <span aria-hidden="true">✓</span>
-          <span>verified{verifiedDate ? ` ${verifiedDate}` : ''}</span>
-        </span>
-      )
-    }
+
   </div>
 </article>

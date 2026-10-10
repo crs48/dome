@@ -7,11 +7,11 @@ import ProjectCard from '../components/ProjectCard.astro';
 type Category = CollectionEntry<'projects'>['data']['category'];
 
 const CATEGORY_ORDER: { key: Category; label: string; blurb: string }[] = [
-  { key: 'bioceramic', label: 'Bioceramic / next-gen', blurb: 'Emerging materials pushing dome building forward.' },
-  { key: 'aircrete', label: 'Aircrete', blurb: 'Cheap, DIY foamed-cement shells and the people building them.' },
+  { key: 'bioceramic', label: 'Bioceramic / next-gen', blurb: 'Newer systems: read the reports and ask about delivery.' },
+  { key: 'aircrete', label: 'Aircrete', blurb: 'Foamed-cement systems, equipment and education.' },
   { key: 'geodesic-kit', label: 'Geodesic kits', blurb: 'Buy-a-kit paths — timber, aluminium, polycarbonate, glass, composite.' },
-  { key: 'monolithic', label: 'Monolithic / sprayed concrete', blurb: 'Seamless concrete shells — the disaster-resistant end of the spectrum.' },
-  { key: 'earthbag', label: 'Earthbag / SuperAdobe', blurb: 'The lowest-cost, most owner-buildable technique.' },
+  { key: 'monolithic', label: 'Monolithic / sprayed concrete', blurb: 'Specialist shell systems; performance depends on the specific design.' },
+  { key: 'earthbag', label: 'Earthbag / SuperAdobe', blurb: 'Hands-on earthen construction, training and technical resources.' },
   { key: 'theory', label: 'Fuller & geodesic theory', blurb: 'Where geodesics came from, and the landmarks that made them famous.' },
   { key: 'inspiration', label: 'Inspiration & community', blurb: 'Real builds and encyclopedic hobbyist knowledge.' },
   { key: 'software', label: 'Geometry & software', blurb: 'Calculators, generators, and hub systems for actually building one.' },
@@ -24,17 +24,16 @@ const byCategory = (cat: Category) =>
 
 <Layout
   title="Resources"
-  description="A curated, live-verified directory of the best dome projects on the internet — kits, aircrete, monolithic, earthbag, geodesic theory, and geometry software."
+  description="A curated directory of dome resources — kits, aircrete, monolithic, earthbag, geodesic theory, and geometry software."
 >
   <div class="mx-auto max-w-6xl px-5 py-14">
     <header class="max-w-3xl">
       <p class="font-mono text-xs uppercase tracking-[0.2em] text-clay">Directory</p>
       <h1 class="mt-3 font-display text-4xl text-moss-deep">Resources</h1>
       <p class="mt-4 text-lg leading-relaxed text-muted">
-        A curated directory out to the best dome projects on the internet —
+        A rabbit hole with a handrail —
         {projects.length} links across {CATEGORY_ORDER.length} categories,
-        live-verified as of July 2026. Vendor sites change; if you spot link rot,
-        it’s the honest cost of a directory kept out in the open.
+        from suppliers and educators to geometry tools. Inclusion is a starting point for investigation, not a technical endorsement. Links and commercial offerings can change.
       </p>
     </header>
 

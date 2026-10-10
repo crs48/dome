@@ -1,198 +1,162 @@
-# Build-method comparison — honest, cited. Order here drives table order.
-# `id` keys the file() loader entry; everything else is schema-validated.
-
+# Qualitative reading guide. No universal prices, R-values or lifespan rankings.
 - id: aircrete
-  name: Aircrete (Domegaia)
+  name: Aircrete (foamed cement)
   family: concrete
-  costPerSqFt: "Very low material (~$1–2/sq-ft per inch of shell)"
-  insulation: "~R-2/in realistic (marketed ~R-6/in is disputed)"
+  costPerSqFt: "Price the complete reinforced and finished system"
+  insulation: "Depends on density, moisture and assembly; request test data"
   diy: high
   light: opaque
-  durability: "Fireproof; absorbs water; young track record"
-  bestUse: "Cheap DIY off-grid shell in a dry climate"
+  durability: "Detail reinforcement, weather protection and repair"
+  bestUse: "Exploring a sculptable, owner-builder approach"
   pros:
-    - "Extremely cheap raw materials — foamed cement and water"
-    - "Light, saw-able, screw-able; friendly to owner-builders"
-    - "Fireproof and pest-proof"
+    - "Cement mixed with foam creates a lightweight, shapeable material"
+    - "Domegaia offers workshops, equipment and design support"
   cons:
-    - "Absorbs water unless carefully sealed and detailed"
-    - "Real insulation value is modest (~R-2/in)"
-    - "Short real-world track record; long-term durability unproven"
+    - "Mix quality, reinforcement and curing require care"
+    - "Raw-material costs omit foundations, services, finishes and labour"
   caveats:
-    - "R-value dispute: independent testing suggests ~R-2/in, versus the marketed ~R-6/in derived from a non-standard test."
+    - "Do not transfer a marketed R-value or strength claim to a different mix or shell. Ask for relevant tests and an engineered design."
   vendorUrl: "https://domegaia.com/"
-  sources:
-    - "https://domegaia.com/"
-    - "https://domegaia.com/blogs/page/aircrete-101-the-ultimate-guide"
-    - "https://www.greenbuildingadvisor.com/question/air-krete-2"
+  sources: ["https://domegaia.com/"]
 
 - id: shotcrete-monolithic
-  name: Shotcrete / Monolithic
+  name: Insulated monolithic concrete
   family: concrete
-  costPerSqFt: "~$130–250/sq ft ($180k–500k finished)"
-  insulation: "~R-30–60, integral foam + thermal mass"
+  costPerSqFt: "Get an itemized local design-and-build quote"
+  insulation: "Insulation layer and concrete mass do different jobs"
   diy: low
   light: opaque
-  durability: "FEMA near-absolute protection; lasts centuries"
-  bestUse: "Maximum disaster resistance and long service life"
+  durability: "Depends on the designed assembly and maintenance"
+  bestUse: "A professionally engineered permanent shell"
   pros:
-    - "Seamless monolithic shell leaks far less than paneled domes"
-    - "FEMA-recognized near-absolute protection from tornadoes/hurricanes"
-    - "Excellent insulation and thermal mass; very long lifespan"
+    - "A continuous reinforced shell is an alternative to panel-by-panel construction"
+    - "Established builders show completed homes and larger buildings"
   cons:
-    - "Expensive and contractor-built — not a DIY method"
-    - "Opaque; daylight only through added windows/skylights"
-    - "Specialized airform + shotcrete crew required"
+    - "Specialist forming, reinforcement and spraying work"
+    - "Windows, entrances and services still need careful details"
   caveats:
-    - "Cost spans a wide range with finish level and region; treat $130–250/sq ft as a planning band, not a quote."
+    - "A dome is not automatically a FEMA-criteria safe room. Verify the complete design, openings, anchorage and applicable hazard criteria."
   vendorUrl: "https://www.monolithic.org/"
   sources:
     - "https://www.monolithic.org/"
-    - "https://www.monolithic.org/fema"
-    - "https://www.fema.gov/sites/default/files/documents/fema_safe-rooms-for-tornadoes-and-hurricanes_p-361.pdf"
-    - "https://homeguide.com/costs/monolithic-dome-home-cost"
+    - "https://www.fema.gov/sites/default/files/documents/building-safe-room-home-small-business.pdf"
 
 - id: timber-geodesic
   name: Timber geodesic
   family: timber
-  costPerSqFt: "~$120 (DIY) – $350 (contractor)/sq ft"
-  insulation: "High (R-30+); no thermal mass"
+  costPerSqFt: "Compare framing kit, shell kit and finished house separately"
+  insulation: "Can accommodate insulation; ask for whole-assembly performance"
   diy: high
   light: opaque
-  durability: "Good; combustible, rot/pest risk if it gets wet"
-  bestUse: "DIY warm, well-insulated home"
+  durability: "Keep the timber dry; make the covering maintainable"
+  bestUse: "A home using familiar carpentry and insulated panels"
   pros:
-    - "Warm, well-insulated, and workable with standard carpentry"
-    - "Strong triangulated structure; skylights add daylight"
-    - "Achievable by determined owner-builders"
+    - "Suppliers offer framing, insulation and finishing systems"
+    - "Windows can be placed within an otherwise insulated envelope"
   cons:
-    - "Many hub/seam joints — the classic dome leak surface"
-    - "Combustible; vulnerable to rot and pests if water gets in"
-    - "Curved walls make rectangular furniture and cabinetry awkward"
+    - "Many junctions need a coordinated roofing and flashing strategy"
+    - "Triangular surfaces and curved edges complicate some interior details"
   caveats:
-    - "Leaks are the defining risk of paneled domes — shingle or heat-weld a continuous membrane over the shell."
+    - "Owner involvement can change paid labour costs, but it does not remove the need for skills, approvals or professional work."
   vendorUrl: "https://naturalspacesdomes.com/dome-system/pricing-and-planning/"
-  sources:
-    - "https://naturalspacesdomes.com/dome-system/pricing-and-planning/"
-    - "https://domebliss.com/waterproofing-geodesic-domes-kits-leakage-solutions-best-practices/"
-    - "https://en.wikipedia.org/wiki/Geodesic_dome"
+  sources: ["https://naturalspacesdomes.com/dome-system/pricing-and-planning/"]
 
 - id: polycarbonate-geodesic
   name: Polycarbonate geodesic
   family: glazed
-  costPerSqFt: "Kit ~$3k–30k"
-  insulation: "~R-2.8 (5-wall); poor"
+  costPerSqFt: "Check size, glazing specification and kit exclusions"
+  insulation: "Varies with the exact multiwall product and framing"
   diy: high
   light: translucent
-  durability: "UV-yellows in ~20 yr; combustible"
-  bestUse: "Greenhouse, sunroom, or glamping shell"
+  durability: "Ask about UV protection, warranty and replacement panels"
+  bestUse: "A growing space or carefully designed sunspace"
   pros:
-    - "Translucent — floods the interior with diffuse daylight"
-    - "Light panels; approachable kit assembly"
-    - "Comparatively inexpensive per square foot"
+    - "Translucent multiwall panels admit diffuse daylight"
+    - "Greenhouse suppliers offer purpose-designed kits"
   cons:
-    - "Low insulation even in multi-wall sheet; big day/night swings"
-    - "UV yellowing and hazing over ~20 years"
-    - "Condensation-prone; needs deliberate ventilation"
+    - "Ventilation and shade matter for summer growing conditions"
+    - "Winter heating needs depend on climate and intended crops"
   caveats:
-    - "Great for plants and shoulder-season use; a poor thermal envelope for a year-round conditioned home."
+    - "A greenhouse enclosure is not evidence of a complete year-round dwelling envelope or permission to live in it."
   vendorUrl: "https://growingspaces.com/"
-  sources:
-    - "https://growingspaces.com/greenhouse-accessories/high-quality-polycarbonate-greenhouse/"
-    - "https://domebliss.com/waterproofing-geodesic-domes-kits-leakage-solutions-best-practices/"
+  sources: ["https://growingspaces.com/geodesic-dome-greenhouse/high-quality-polycarbonate-greenhouse/"]
 
 - id: glass-geodesic
   name: Glass geodesic
   family: glazed
-  costPerSqFt: "Kit ~$4k–20k+; architectural much higher"
-  insulation: "Worst (~R-3–8); huge solar gain/loss"
+  costPerSqFt: "Quote the glazing, structure, installation and climate systems"
+  insulation: "Depends on glazing units, coatings, frame and proportion of glass"
   diy: low
   light: transparent
-  durability: "Brittle; requires safety glass"
-  bestUse: "Views, glamping, and sunrooms"
+  durability: "Detail safety glazing, seals and access for replacement"
+  bestUse: "A transparent space with a serious comfort strategy"
   pros:
-    - "Transparent — unbroken views and maximum daylight"
-    - "Durable, non-yellowing glazing (vs polycarbonate)"
-    - "Striking architectural presence"
+    - "Clear views and a close visual relationship with the surroundings"
+    - "Specialist suppliers offer geodesic glass enclosures"
   cons:
-    - "Worst insulation of any method; large heating/cooling loads"
-    - "Heavy, brittle, and expensive; safety glazing required"
-    - "Serious condensation and overheating without active climate control"
+    - "Solar gain, glare, heat loss and privacy need attention"
+    - "High or sloping glazing complicates cleaning and repair"
   caveats:
-    - "Solar gain cuts both ways — glorious daylight, punishing thermal loads. Best as a feature space, not the whole envelope."
+    - "Avoid ranking all glass as one material. Ask for the specified glazing and a climate-specific assessment of the complete building."
   vendorUrl: "https://biodomes.org/"
-  sources:
-    - "https://biodomes.org/"
-    - "https://en.wikipedia.org/wiki/Geodesic_dome"
+  sources: ["https://biodomes.org/"]
 
 - id: binishell
-  name: Binishell (air-inflated concrete)
+  name: Binishell (air-formed concrete)
   family: concrete
-  costPerSqFt: "Shell $10–30/sq ft (tiny prototypes)"
-  insulation: "Thermal mass; needs added insulation"
+  costPerSqFt: "Request a project-specific proposal; prototype prices do not transfer"
+  insulation: "A concrete shell still needs an envelope strategy"
   diy: low
   light: opaque
-  durability: "Strong, but a documented failure history"
-  bestUse: "Rapid concrete shells (with proper engineering)"
+  durability: "System generation, engineering and construction quality matter"
+  bestUse: "Exploring specialist concrete-shell construction"
   pros:
-    - "Concrete shell lifted with an inflatable form — fast to raise"
-    - "Seamless surface resists leaks better than paneled domes"
-    - "Strong in compression"
+    - "Uses pneumatic forming to produce curved concrete structures"
+    - "Offers a different construction route from a geodesic kit"
   cons:
-    - "Mass is not insulation — needs a separate insulating layer"
-    - "Requires real structural engineering; not owner-buildable"
-    - "History of failures if under-engineered"
+    - "Requires specialist design and delivery capability"
+    - "Rapid shell forming does not describe total project duration"
   caveats:
-    - "The cheap per-sq-ft figures are for 100–200 sq ft prototypes; a 1975 Fairvale (Australia) Binishell collapse is part of the record."
+    - "Ask which specific system and completed comparable projects a proposal refers to. Do not equate different generations of the technology."
   vendorUrl: "https://binishells.com/"
-  sources:
-    - "https://binishells.com/"
-    - "https://en.wikipedia.org/wiki/Binishell"
+  sources: ["https://binishells.com/"]
 
 - id: bioceramic-geoship
-  name: Bioceramic (Geoship)
+  name: Bioceramic panels (Geoship)
   family: ceramic
-  costPerSqFt: "Founder ~$500k; go-to-market ~$90k–380k"
-  insulation: "Vendor claim (independently unverified)"
+  costPerSqFt: "Confirm current scope, delivery terms and site costs directly"
+  insulation: "Request test reports for the supplied assembly"
   diy: low
   light: opaque
-  durability: "Fireproof ceramic; unproven at scale"
-  bestUse: "Health/eco early-adopter kit"
+  durability: "Check documented performance and warranty conditions"
+  bestUse: "Investigating a newer prefabricated material system"
   pros:
-    - "Non-combustible bioceramic with a luminous finish"
-    - "Marketed as non-toxic, recyclable, and long-lived"
-    - "Novel prefab kit approach to assembly"
+    - "The supplier proposes a modular bioceramic dome system"
+    - "Factory-made components may suit some project approaches"
   cons:
-    - "Pre-mainstream startup; delivery and price risk"
-    - "Performance figures are vendor claims, not independently verified"
-    - "Early pricing is high relative to conventional builds"
+    - "Track record and local availability need due diligence"
+    - "Marketing labels alone do not establish health or environmental outcomes"
   caveats:
-    - "Geoship is a pre-mainstream startup: treat performance numbers as vendor claims and factor in delivery risk."
+    - "Treat supplier performance statements as supplier claims. Ask for completed references, independent reports and clear contractual terms."
   vendorUrl: "https://geoship.is/"
-  sources:
-    - "https://geoship.is/"
-    - "https://ceramics.org/ceramic-tech-today/the-future-of-building-are-bioceramic-dome-homes-the-answer-to-resilient-and-affordable-housing/"
+  sources: ["https://geoship.is/"]
 
 - id: earthbag-superadobe
-  name: Earthbag / SuperAdobe (CalEarth)
+  name: Earthbag / SuperAdobe
   family: earth
-  costPerSqFt: "Cheapest materials; labor-heavy"
-  insulation: "Low (thermal mass ≠ insulation)"
-  diy: highest
+  costPerSqFt: "Material sourcing and substantial labour both count"
+  insulation: "Thermal mass is not the same as insulation"
+  diy: high
   light: opaque
-  durability: "Fireproof, seismic; ICC-ES listed; moisture-sensitive"
-  bestUse: "Ultra-low-cost DIY in desert climates"
+  durability: "Mix, reinforcement, foundations and moisture protection matter"
+  bestUse: "A hands-on earthen-building project with appropriate expertise"
   pros:
-    - "Cheapest materials of any method — earth in bags"
-    - "Fireproof and seismically strong; ICC-ES evaluation eases permitting"
-    - "The most owner-buildable, community-friendly technique"
+    - "CalEarth provides training and builder resources"
+    - "A specific cement-stabilized SuperAdobe system has an evaluation report"
   cons:
-    - "Very labor-intensive to build"
-    - "Thermal mass is not insulation — poor in cold climates"
-    - "Moisture-sensitive; needs good drainage and plaster"
+    - "Filling, tamping and finishing can require considerable labour"
+    - "Climate, water management and thermal design remain essential"
   caveats:
-    - "Mass buffers desert day/night swings but does not insulate; in cold climates it needs a separate insulation layer."
-  vendorUrl: "https://calearth.org/"
-  sources:
-    - "https://calearth.org/"
-    - "https://www.calearth.org/blog/2021/6/20/superadobe-icc-approval-complete"
+    - "The evaluation applies to its specified system and conditions, not every earthbag building. CalEarth calls for professionally stamped drawings; confirm local acceptance."
+  vendorUrl: "https://calearth.org/pages/resources-for-builders"
+  sources: ["https://calearth.org/pages/resources-for-builders"]

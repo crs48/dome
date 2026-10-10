@@ -142,3 +142,7 @@ links and `public/` assets are routed through `import.meta.env.BASE_URL`.
   written prose.
 
 <div align="center"><sub>Built with Astro + Blender · warm paper, moss, clay, and daylight.</sub></div>
+
+## October 2026 field-guide refresh
+
+The site now includes a purpose chooser, an illustrated welcome, and a [before-you-build guide](https://crs48.github.io/dome/before-you-build/) covering comfort, complete budgets and evidence questions. The eight construction approaches use scoped qualitative comparisons instead of mixing shell prices with finished homes. Original concept art, films, Blender studies and routes remain. See [the research and verification log](docs/REFRESH.md).

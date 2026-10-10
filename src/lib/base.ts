@@ -20,6 +20,7 @@ export const NAV: NavItem[] = [
   { href: '/design', label: 'The Design' },
   { href: '/methods', label: 'Build Methods' },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/before-you-build', label: 'Reality check' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'About' },
 ];

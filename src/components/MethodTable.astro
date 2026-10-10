@@ -30,16 +30,17 @@ const diyClass: Record<string, string> = {
 ---
 
 <!-- Quick-scan comparison -->
-<div class="overflow-x-auto rounded-panel border border-line">
-  <table class="w-full border-collapse text-left text-sm">
+<p class="mb-3 text-sm text-muted">Swipe the table on a small screen, or read each approach in full below.</p>
+<div class="overflow-x-auto rounded-panel border border-line" role="region" aria-label="Scrollable method comparison" tabindex="0">
+  <table aria-label="Dome construction approaches" class="w-full border-collapse text-left text-sm">
     <thead class="bg-surface text-xs uppercase tracking-wide text-muted">
       <tr>
         <th class="px-4 py-3 font-semibold">Method</th>
-        <th class="px-4 py-3 font-semibold">Cost</th>
+        <th class="px-4 py-3 font-semibold">Budget question</th>
         <th class="px-4 py-3 font-semibold">Insulation</th>
-        <th class="px-4 py-3 font-semibold">DIY</th>
+        <th class="px-4 py-3 font-semibold">Owner involvement</th>
         <th class="px-4 py-3 font-semibold">Light</th>
-        <th class="px-4 py-3 font-semibold">Best use</th>
+        <th class="px-4 py-3 font-semibold">Starting point</th>
       </tr>
     </thead>
     <tbody>
@@ -85,7 +86,7 @@ const diyClass: Record<string, string> = {
 
         <div class="mt-5 grid gap-6 sm:grid-cols-2">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wide text-moss">Pros</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-moss">The appeal</p>
             <ul class="mt-2 space-y-1.5 text-sm text-ink">
               {m.data.pros.map((p) => (
                 <li class="flex gap-2">
@@ -96,7 +97,7 @@ const diyClass: Record<string, string> = {
             </ul>
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wide text-clay">Cons</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-clay">The homework</p>
             <ul class="mt-2 space-y-1.5 text-sm text-ink">
               {m.data.cons.map((c) => (
                 <li class="flex gap-2">
