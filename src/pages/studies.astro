@@ -12,6 +12,7 @@ import { withBase } from '../lib/base';
         <a href={study.image.src} aria-label={`Open full-size study: ${study.title}`}><ConceptImage concept={key} caption={false} sizes="(min-width: 1280px) 600px, (min-width: 521px) 46vw, 94vw" /></a>
         <div class="study-heading"><div><p class="eyebrow">Study {study.number}</p><h2>{study.title}</h2></div><a href={study.image.src} aria-label={`Open full-size ${study.title}`}><span aria-hidden="true">↗</span></a></div>
         <p class="study-caption">{study.caption}</p><p class="quiet-note">{study.note}</p>
+        {(key === 'exterior' || key === 'mineral') && <a class="line-link" href="https://geoship.is/">Explore Geoship’s bioceramic domes <span aria-hidden="true">↗</span></a>}
       </article>)}
     </div>
     <div class="collection-end"><p class="quiet-note">Generated with OpenAI’s built-in image generation tool. These are visual concepts, not photographs, building plans, or coordinated views of a single measured model.</p><a class="line-link" href={withBase('/about/')}>Image credits & project background <span aria-hidden="true">↗</span></a></div>

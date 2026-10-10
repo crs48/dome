@@ -3,7 +3,7 @@ import ConceptImage from './ConceptImage.astro';
 import { withBase } from '../lib/base';
 const materials = [
   { id: 'timber', label: 'Warm timber', title: 'Let the structure show.', body: 'Timber ribs trace the triangles overhead. Pale infill keeps the room bright, while the frame gives plants, curtains, and fixtures a visible rhythm.', note: 'Explore an insulated panel assembly with a continuous weather layer and designed connections.' },
-  { id: 'mineral', label: 'Quiet mineral', title: 'A softer light. A quieter shell.', body: 'Pale mineral facets make a calm backdrop for concrete, fabric, and a few pieces of wood. Selective windows bring the garden into the room.', note: 'A bioceramic-inspired direction. The material, shell assembly, and attachment interfaces remain to be specified.' },
+  { id: 'mineral', label: 'Quiet mineral', title: 'A softer light. A quieter shell.', body: 'Pale mineral facets make a calm backdrop for concrete, fabric, and a few pieces of wood. Selective windows bring the garden into the room.', note: 'This independent concept’s material, shell assembly, and attachment interfaces remain to be specified.' },
 ] as const;
 ---
 <div class="material-study" data-choice-group>
@@ -13,7 +13,7 @@ const materials = [
   <div aria-live="polite" aria-atomic="true">
     {materials.map((material) => <article class="material-panel" id={`material-${material.id}`} data-choice-panel={material.id}>
       <ConceptImage concept={material.id} caption={false} sizes="(min-width: 900px) 65vw, 94vw" />
-      <div><h3>{material.title}</h3><p>{material.body}</p><p class="quiet-note">{material.note}</p><a class="line-link" href={withBase('/archive/methods/')}>Compare building approaches <span aria-hidden="true">↗</span></a></div>
+      <div><h3>{material.title}</h3><p>{material.body}</p>{material.id === 'mineral' && <p><a class="underline underline-offset-4" href="https://geoship.is/">Geoship’s bioceramic geodesic domes</a> are a direct inspiration for this material direction.</p>}<p class="quiet-note">{material.note}</p><a class="line-link" href={withBase('/archive/methods/')}>Compare building approaches <span aria-hidden="true">↗</span></a></div>
     </article>)}
   </div>
 </div>

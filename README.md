@@ -101,7 +101,9 @@ URLs, the sitemap, links, and assets all use the custom domain correctly.
 
 The ten current studies were generated with OpenAI’s built-in image generation
 tool. They are independent design variations, not coordinated views of one
-measured model. The mineral shell and attachment details do not depict certified
+measured model. [Geoship’s bioceramic dome work](https://geoship.is/) is a direct
+inspiration for the mineral-shell direction. The images are independent concepts,
+not Geoship product renderings. The attachment details do not depict certified
 manufacturer products. The archive retains the original Grok Imagine still and
 films, alongside the author’s Blender studies.
 
