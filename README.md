@@ -146,3 +146,18 @@ links and `public/` assets are routed through `import.meta.env.BASE_URL`.
 ## October 2026 field-guide refresh
 
 The site now includes a purpose chooser, an illustrated welcome, and a [before-you-build guide](https://crs48.github.io/dome/before-you-build/) covering comfort, complete budgets and evidence questions. The eight construction approaches use scoped qualitative comparisons instead of mixing shell prices with finished homes. Original concept art, films, Blender studies and routes remain. See [the research and verification log](docs/REFRESH.md).
+
+## Human habitat concept studies
+
+Ten new AI-generated studies explore floor living, daylight bathing with a private
+toilet, timber and mineral shells, structural attachment concepts, concrete floor
+services, adjustable work surfaces, and shared gardens.
+
+- [Read the illustrated lookbook and website proposal](docs/explorations/0002_%5B_%5D_HUMAN_HABITAT_CONCEPTS_AND_WEBSITE_PROPOSAL.md).
+- [Browse the original images](src/assets/concepts/2026-10-human-habitat/).
+- [Read the complete prompts and provenance](src/assets/concepts/2026-10-human-habitat/manifest.json).
+
+These October 2026 images use the built-in image generation tool. They are
+independent design concepts, not measured plans, engineering details, or actual
+manufacturer products. The website changes described in the proposal are future
+work; the published pages have not been updated with this collection.
