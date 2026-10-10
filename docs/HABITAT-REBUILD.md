@@ -25,10 +25,32 @@ flowchart LR
 
 ## Verification and release
 
-- [ ] Run Astro checking and the production build.
-- [ ] Audit generated internal links, image references, headings, and redirects.
-- [ ] Check desktop and mobile layouts, room/day controls, keyboard use, and archive navigation.
-- [ ] Check the no-JavaScript presentation and reduced-motion behavior.
-- [ ] Verify responsive image output and opening-page transfer size.
+- [x] Run Astro checking and the production build.
+- [x] Audit generated internal links, image references, headings, and redirects.
+- [x] Check desktop and mobile layouts, room/day controls, keyboard use, and archive navigation.
+- [x] Check the no-JavaScript presentation and reduced-motion behavior.
+- [x] Verify responsive image output and opening-page asset sizes.
 - [ ] Commit the completed rebuild and publish through the existing GitHub Pages workflow.
 - [ ] Confirm the live deployment and record its URL and revision.
+
+## Verification evidence
+
+- Astro check: 0 errors, warnings, or hints; production build generated 16 HTML routes.
+- Static audit: 852 local link, fragment, and asset references resolved; one H1 per page, no duplicate IDs, all images have alternate text.
+- The homepage has one eager image and lazy loading for subsequent studies. It contains no video requests. All concept images have explicit dimensions and responsive AVIF/WebP sources.
+- Desktop at 1440px and mobile at 390px: homepage, room explorer, day selector, material alternative, archive index, and study collection reviewed. No horizontal document overflow.
+- Keyboard Enter selects the private-toilet description; pointer selection switches the work/rest scenes and timber/mineral alternatives.
+- Legacy `/methods/?from=legacy#bioceramic-geoship` resolves to the archive with query and fragment preserved and the target present.
+- A script-free response of the production HTML exposes all 14 room/day/material stories and hides inactive controls. No account, network request, or saved preference is used by the selectors.
+- Reduced-motion CSS removes smooth scrolling and transitions; selectors do not animate or auto-advance.
+- Original artwork, fifteen films, Blender models, and archived research remain available.
+
+### Asset sizes and captures
+
+The built homepage HTML is 41,716 bytes (8,740 bytes with gzip), with a 40,468-byte stylesheet. The hero offers four widths: AVIF source files range from 44,263 to 272,659 bytes and WebP from 28,598 to 189,912 bytes. These are file sizes, not a measured network waterfall; browser caching, pixel density, font loading, and nearby lazy images affect transfer. Original PNGs download only when a visitor chooses a full-size study.
+
+The sitemap contains 11 canonical pages; the five redirect-only legacy routes are excluded.
+
+- [Desktop opening](previews/habitat-desktop.jpg)
+- [Mobile opening](previews/habitat-mobile.jpg)
+- [Interactive room explorer](previews/habitat-room-explorer.jpg)

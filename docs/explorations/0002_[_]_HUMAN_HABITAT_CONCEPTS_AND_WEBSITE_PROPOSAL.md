@@ -252,9 +252,9 @@ The next visual pass should then focus on three coordinated layouts, adjustable 
 - [x] Write the visual lookbook, spatial alternatives, research, and website pitch.
 - [ ] Choose a lead visual direction and a target footprint for the measured study.
 - [ ] Build one consistent Blender model and test the layout with a physical mockup.
-- [ ] Add the concept collection and expanded design/gallery experiences to Astro.
-- [ ] Revise homepage storytelling and generator attribution across the affected pages.
-- [ ] Add the room explorer and day-cycle controls after the static story is readable.
+- [x] Add the concept collection, expanded homepage story, study gallery, and archive to Astro.
+- [x] Revise homepage storytelling and generator attribution across the affected pages.
+- [x] Add the room explorer and day-cycle controls after the static story is readable.
 
 ## Validation checklist
 
@@ -264,8 +264,8 @@ The next visual pass should then focus on three coordinated layouts, adjustable 
 - [x] Distinguish thermal storage, heat removal, and humidity control.
 - [x] Retain private toilet intent while keeping bath and shower daylit.
 - [x] Verify all 22 local image and document references across the proposal and README.
-- [ ] For implementation: build the site and check responsive image output and asset weights.
-- [ ] For implementation: check desktop/mobile layout, keyboard access, no-JavaScript reading, and reduced motion.
+- [x] For implementation: build the site and check responsive image output and asset weights.
+- [x] For implementation: check desktop/mobile layout, keyboard access, no-JavaScript reading, and reduced motion.
 - [ ] For the building design: review loads, wet detailing, ventilation, energy, circulation, and local requirements with the relevant designers.
 
 ## References

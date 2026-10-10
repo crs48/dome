@@ -15,7 +15,7 @@ const places = [
     <div class="room-hotspots enhancement-controls" hidden aria-label="Places in the room">
       {places.map((place) => <button type="button" class="room-hotspot" style={`--x:${place.x}%;--y:${place.y}%`} data-choice={place.id} aria-label={`Explore ${place.label.toLowerCase()}`} aria-controls={`room-${place.id}`} aria-pressed="false">{place.number}</button>)}
     </div>
-    <p class="image-note">Concept cutaway · select a number or an activity to explore.</p>
+    <p class="image-note">Concept cutaway · six daily activities around an open center.</p>
   </div>
   <div class="room-reading">
     <div class="choice-controls room-choices enhancement-controls" hidden role="group" aria-label="Explore an activity">

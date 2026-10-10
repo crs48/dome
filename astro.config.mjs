@@ -12,7 +12,11 @@ export default defineConfig({
   site: 'https://crs48.github.io',
   base: '/dome',
   trailingSlash: 'ignore',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({
+    // Redirect-only legacy routes point to their canonical archive pages.
+    filter: (page) => !['design', 'gallery', 'methods', 'resources', 'before-you-build']
+      .some((route) => new URL(page).pathname.replace(/\/$/, '') === `/dome/${route}`),
+  })],
   image: {
     // Scale down to the container, never up; emit responsive srcset styles.
     layout: 'constrained',

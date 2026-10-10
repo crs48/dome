@@ -1,17 +1,13 @@
 ---
-import { withBase } from '../lib/base';
-const isArchive = Astro.url.pathname.includes('/archive');
-const isStudies = Astro.url.pathname.includes('/studies');
+import { NAV, withBase } from '../lib/base';
+const links = NAV.filter(({ href }) => href !== '/' && href !== '/about');
+const path = Astro.url.pathname.replace(/\/$/, '');
 ---
 <header class="site-header">
   <div class="habitat-wrap masthead">
     <a class="site-brand" href={withBase('/')} aria-label="The One-Room Dome home"><span class="brand-mark" aria-hidden="true">△</span><span>one room.<small>THE DOME HOME STUDY</small></span></a>
     <nav aria-label="Primary">
-      <a href={withBase('/#room')}>The room</a>
-      <a href={withBase('/#day')}>A day here</a>
-      <a href={withBase('/#systems')}>How it works</a>
-      <a href={withBase('/studies/')} aria-current={isStudies ? 'page' : undefined}>The studies</a>
-      <a class="archive-nav-link" href={withBase('/archive/')} aria-current={isArchive ? 'page' : undefined}>Archive <span aria-hidden="true">↗</span></a>
+      {links.map(({ href, label }) => <a href={withBase(href)} class:list={{ 'archive-nav-link': href === '/archive/' }} aria-current={!href.includes('#') && (path === withBase(href).replace(/\/$/, '') || path.startsWith(withBase(href))) ? 'page' : undefined}>{label}{href === '/archive/' && <span aria-hidden="true"> ↗</span>}</a>)}
     </nav>
   </div>
 </header>
