@@ -30,8 +30,8 @@ flowchart LR
 - [x] Check desktop and mobile layouts, room/day controls, keyboard use, and archive navigation.
 - [x] Check the no-JavaScript presentation and reduced-motion behavior.
 - [x] Verify responsive image output and opening-page asset sizes.
-- [ ] Commit the completed rebuild and publish through the existing GitHub Pages workflow.
-- [ ] Confirm the live deployment and record its URL and revision.
+- [x] Commit the completed rebuild and publish through the existing GitHub Pages workflow.
+- [x] Confirm the live deployment and record its URL and revision.
 
 ## Verification evidence
 
@@ -54,3 +54,11 @@ The sitemap contains 11 canonical pages; the five redirect-only legacy routes ar
 - [Desktop opening](previews/habitat-desktop.jpg)
 - [Mobile opening](previews/habitat-mobile.jpg)
 - [Interactive room explorer](previews/habitat-room-explorer.jpg)
+
+## Published release
+
+[The rebuilt site](https://crs48.github.io/dome/) is live. [GitHub Pages run 38059508349](https://github.com/crs48/dome/actions/runs/38059508349) successfully built and deployed application revision `e3477e8513e76b17d0e4a65db304dd8cbe4f3b7a`.
+
+The live homepage, study collection, archive index, original gallery, and legacy design redirect returned HTTP 200 with the expected content. The live room explorer was also exercised in the browser, including private-toilet selection.
+
+This final release record changes documentation only; the deployed application is the verified revision above.
