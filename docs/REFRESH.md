@@ -10,7 +10,7 @@ The existing project has valuable original Blender studies, clearly labeled AI c
 - [x] Replace unsupported cost, insulation, lifespan and disaster-proof comparisons.
 - [x] Expand the design tradeoffs and add a practical before-building guide.
 - [x] Check type safety, static routes, desktop/mobile layout and interactions.
-- [ ] Publish and verify the live Pages deployment.
+- [x] Publish and verify the live Pages deployment.
 
 ```mermaid
 flowchart LR
@@ -43,3 +43,5 @@ Vendor links describe systems and are not independent validation or endorsements
 - The featured film requires an explicit play action, respecting visitors who prefer less motion and avoiding automatic video downloads.
 - Original six routes, 15 concept films, source Blender assets and original licensing retained. Added self-hosted font license notices.
 - Existing Astro 5 toolchain has npm advisories; this static-content refresh does not enable a runtime server or process visitor inputs. A framework major-version migration is separate work.
+
+Release verified: [GitHub Pages run 38048309028](https://github.com/crs48/dome/actions/runs/38048309028) succeeded for `a64434b`; the live homepage and new guide were confirmed. An independent read-only review found no actionable regressions in the changed routes, assets, interaction logic or research claims.
