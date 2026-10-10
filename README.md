@@ -18,7 +18,7 @@ toilet enclosure brings a door where it matters; daily life shares the light.
 
 The site follows the human habitat proposal through a continuous visual tour:
 
-1. **The room** — explore sleeping, cooking, bathing, movement, work, and privacy.
+1. **The room** — explore seven ways to live: sleeping, cooking, bathing, movement, work, privacy, and socializing. Floor cushions and a folding low table turn the open floor into a living and dining space, then tuck away when you want the room back.
 2. **A day here** — choose a moment from waking to rest.
 3. **Daylight bathing** — an open tub and curtained shower beside a private toilet.
 4. **How it could work** — compare shell materials, floor systems, and attachments.
