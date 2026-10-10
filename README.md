@@ -6,9 +6,9 @@ One generous room for sleeping close to the ground, working in several postures,
 bathing in daylight, cooking, moving, and spending time together. A private
 toilet enclosure brings a door where it matters; daily life shares the light.
 
-[Explore the site](https://crs48.github.io/dome/) ·
-[The ten studies](https://crs48.github.io/dome/studies/) ·
-[Earlier explorations](https://crs48.github.io/dome/archive/)
+[Explore the site](https://domes.haus/) ·
+[The ten studies](https://domes.haus/studies/) ·
+[Earlier explorations](https://domes.haus/archive/)
 
 ![Timber dome with an open movement floor, low bed, kitchen, private toilet and daylight bathing](src/assets/concepts/2026-10-human-habitat/01-timber-human-habitat.png)
 
@@ -52,7 +52,7 @@ fragment links. `/about/` now explains the current collection and all image cred
 ## Development
 
 The site uses Astro 5, MDX, Tailwind CSS v4, and local responsive image processing.
-It remains a static GitHub Pages project served under `/dome/`.
+It is a static GitHub Pages site served at the root of `https://domes.haus/`.
 
 ```sh
 npm install
@@ -65,6 +65,11 @@ npm run posters   # regenerate legacy film posters; requires ffmpeg
 Every push to `main` runs the existing GitHub Pages deployment workflow. Keep
 hand-written internal links and public asset paths behind `withBase()` from
 `src/lib/base.ts`; Astro prefixes imported image assets automatically.
+
+The custom domain is configured in the repository's GitHub Pages settings.
+This deployment uses GitHub Actions, so Pages does not require a `CNAME` file.
+Keep Astro's `site` set to `https://domes.haus` and `base` set to `/` so canonical
+URLs, the sitemap, links, and assets all use the custom domain correctly.
 
 ## Project map
 
